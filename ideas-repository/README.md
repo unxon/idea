@@ -1,25 +1,20 @@
-# Research-derived opportunity repository
+# Repository documentation
 
 ## Scope
-This repository converts the supplied public technical signals into software opportunities. It prioritizes durable operational pain, security exposure, infrastructure complexity, and implementation feasibility over generic assistant features.
+This repository converts the supplied research inputs into software opportunities with explicit pain points, implementation paths, demand signals, business models, and risks.
 
-## Interpretation rules
-- Evidence is limited to the supplied inputs.
-- Engagement counts are treated as directional demand signals, not market validation.
-- Statements marked as inference identify conclusions that go beyond explicit input wording.
-- Security and infrastructure opportunities receive priority because the inputs contain repeated incident, isolation, supply-chain, and reliability signals.
-- Each opportunity should be validated through customer interviews, prototype testing, and willingness-to-pay research before implementation at scale.
+## Evaluation method
+Ideas were prioritized using four dimensions: novelty, feasibility, impact, and implementation effort. Scores are directional integer estimates from 1 to 10. Evidence statements distinguish direct signals from inferences.
+
+## Selection principles
+- Prefer infrastructure, workflow, security, quality, and domain-specific systems over generic AI interfaces.
+- Favor measurable outcomes such as reduced debugging time, fewer leaked credentials, faster defect reproduction, improved decode latency, or better grid-event analysis.
+- Include implementation constraints, operational risks, and a concrete validation step.
+- Keep source references generic and limited to the supplied research-input identifiers.
 
 ## Recommended validation sequence
-1. Validate the buyer and highest-cost failure mode.
-2. Build a read-only or simulation-only prototype.
-3. Measure precision, rollback safety, and operational time saved.
-4. Test integration with existing developer, cloud, or industrial workflows.
-5. Establish compliance, data-retention, and liability boundaries before automation.
-
-## Highest-leverage themes
-- Trusted developer tooling
-- Continuous cloud isolation verification
-- Governance for autonomous software changes
-- Resilient distributed energy operations
-- Controlled, reversible enterprise knowledge updates
+1. Validate the highest-risk technical assumption with a narrow prototype.
+2. Measure a concrete baseline and improvement metric.
+3. Interview the target operator or engineering buyer.
+4. Test deployment, data access, security, and integration constraints.
+5. Expand only after the problem has demonstrated repeatable economic value.
