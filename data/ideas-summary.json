@@ -1,27 +1,11 @@
 {
-  "run_id": "run-1793136606458",
-  "timestamp": "2026-10-27T21:30:06.458Z",
-  "research_summary": "The research input highlights demand around AI voice tooling, construction operations software, startup hiring and founding-engineer workflows, fintech and infrastructure products, cross-border incorporation, and bundled access to AI developer tools. The strongest opportunities are vertical workflow systems with operational data advantages rather than generic AI applications.",
-  "top_opportunities": [
-    "construction-ops-control-plane",
-    "voice-workflow-runtime",
-    "founding-engineer-project-match",
-    "startup-ai-credit-orchestrator"
-  ],
-  "recommended_next_queries": [
-    "What construction workflows create the highest measurable cost or delay for small and mid-sized operators?",
-    "Which AI voice workflows have sufficient call volume and low enough risk for initial automation?",
-    "How do startups and engineers currently structure paid technical trials, repository access, and evaluation?",
-    "Which AI developer-credit providers expose usable entitlement, expiration, and usage data?",
-    "Which cross-border incorporation tasks can be automated without providing legal or tax advice?",
-    "What startup lifecycle milestone has the strongest willingness to pay for a focused operations product?"
-  ],
+  "run_id": "run-1793741407461",
+  "timestamp": "2026-11-03T21:30:07.461Z",
+  "research_summary": "No usable research inputs were available after filtering.",
+  "top_opportunities": [],
+  "recommended_next_queries": [],
   "quality_notes": [
-    "Only research-input-1 was provided and used.",
-    "No external sources were added.",
-    "Several opportunities are directly supported by the input; compliance and founder-operations concepts are more inferential.",
-    "The source text contains promotional and anecdotal material, so market size and customer willingness to pay remain unvalidated.",
-    "All ideas have status new as required.",
-    "Validated total ideas: 6"
+    "No usable cleaned inputs were available.",
+    "Validated total ideas: 0"
   ]
 }
