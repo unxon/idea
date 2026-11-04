@@ -1,0 +1,546 @@
+{
+  "run_id": "run-1793763010502",
+  "timestamp": "2026-11-04T03:30:10.502Z",
+  "research_summary": "The supplied inputs show strong demand signals around production-grade software agents, controlled tool execution, autonomous quality assurance, AI usage visibility, agent communication, privacy-preserving local inference, structured data access, hardware development, and long-term data retention. The highest-signal opportunities are infrastructure products that reduce operational risk rather than generic conversational interfaces. Several signals are based on launch traction, discussion volume, or repeated product themes and should be treated as directional evidence rather than validated market size.",
+  "top_opportunities": [
+    "Policy-Controlled Agent Action Gateway: strongest combination of explicit pain, security urgency, technical depth, and enterprise monetization.",
+    "Evidence-Based Agent Quality Control Plane: supported by converging signals around autonomous QA and agent self-verification.",
+    "Unified Agent Data Fabric for Structured and Semantic Queries: technically defensible infrastructure opportunity with broad agent adoption leverage.",
+    "AI Engineering Usage and Risk Ledger: clear governance need created by expanding model and agent usage across development workflows.",
+    "Private Local Model Operations Workbench: strong privacy and on-device signals with a feasible developer-focused entry point."
+  ],
+  "ideas_by_industry": [
+    {
+      "industry": "Developer infrastructure and security",
+      "ideas": [
+        {
+          "id": "policy-agent-gateway",
+          "title": "Policy-Controlled Agent Action Gateway",
+          "problem": "Software agents increasingly need to call APIs, manipulate files, and perform business actions, but organizations lack consistent controls for authorization, approval, data boundaries, replay protection, and auditability.",
+          "solution": "Provide a deployment layer that brokers agent actions through explicit policies, risk-based approvals, scoped credentials, execution sandboxes, and immutable event records.",
+          "technical_approach": "Implement a protocol-agnostic gateway with typed tool schemas, policy evaluation, short-lived credentials, action previews, human approval checkpoints, idempotency keys, tamper-evident logs, and tenant-level data-loss controls. Include simulation mode for testing actions before production execution.",
+          "stack": [
+            "Go",
+            "TypeScript",
+            "PostgreSQL-compatible database",
+            "Redis-compatible queue",
+            "OpenTelemetry-compatible tracing",
+            "WebAssembly sandboxing"
+          ],
+          "evidence": [
+            "A production gateway for agents acting on behalf of users is a direct launch signal.",
+            "Multiple inputs emphasize agents operating across tools, applications, and data sources.",
+            "Security concerns around automatic plugin installation and broad data sharing indicate demand for permission and audit controls.",
+            "This is a signal for infrastructure demand, not proof of enterprise willingness to pay."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "enterprise SaaS",
+            "usage-based API",
+            "private deployment"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 8
+          },
+          "risks": [
+            "Protocol and tool interfaces may change quickly.",
+            "Customers may prefer capabilities bundled into existing identity or security products.",
+            "Incorrect policy configuration could block legitimate work or permit harmful actions."
+          ],
+          "tags": [
+            "agent-security",
+            "authorization",
+            "auditability",
+            "developer-infrastructure",
+            "enterprise"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Build a narrow gateway for three common action types with approval flows, scoped credentials, and replayable audit records; validate deployment friction with security-conscious engineering teams."
+        },
+        {
+          "id": "agent-quality-control-plane",
+          "title": "Evidence-Based Agent Quality Control Plane",
+          "problem": "Autonomous agents can produce plausible but incorrect results, while teams lack repeatable methods to compare runs, detect regressions, verify tool calls, and determine whether an agent is safe to release.",
+          "solution": "Create a control plane that evaluates agent tasks using scenario suites, observable intermediate actions, assertions, adversarial cases, and release gates.",
+          "technical_approach": "Capture traces, tool inputs and outputs, state transitions, latency, cost, and final artifacts. Support deterministic fixtures, browser and API mocks, policy assertions, evaluator ensembles, human review sampling, regression diffs, and environment promotion gates.",
+          "stack": [
+            "Python",
+            "TypeScript",
+            "OpenTelemetry-compatible traces",
+            "Object storage",
+            "Columnar analytics database",
+            "Containerized test runners"
+          ],
+          "evidence": [
+            "Autonomous quality assurance is a prominent product signal.",
+            "A separate signal describes agents checking each other's work, reinforcing the need for verification rather than one-shot generation.",
+            "Agent gateway and data-access products imply a growing need to test multi-step behavior across tools.",
+            "The opportunity is an inference from converging signals and requires customer validation."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "enterprise SaaS",
+            "per-seat SaaS",
+            "usage-based evaluation"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 9,
+            "effort": 8
+          },
+          "risks": [
+            "Evaluation metrics may be subjective or gameable.",
+            "Testing complex real-world tasks can be expensive.",
+            "Existing observability products may expand into this category."
+          ],
+          "tags": [
+            "agent-evaluation",
+            "quality-assurance",
+            "release-engineering",
+            "observability"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Prototype a scenario runner that records every action and produces regression diffs for a small set of API workflows."
+        },
+        {
+          "id": "ai-usage-governance",
+          "title": "AI Engineering Usage and Risk Ledger",
+          "problem": "Organizations cannot reliably measure which models, agents, plugins, prompts, data sources, and generated changes are used by engineering teams, making cost control, security review, and governance difficult.",
+          "solution": "Offer a usage ledger that maps AI activity to people, repositories, environments, data classifications, costs, approvals, and outcomes without requiring teams to change their workflows.",
+          "technical_approach": "Combine gateway telemetry, local development instrumentation, repository metadata, model-call normalization, secret detection, policy rules, cost allocation, and approval workflows. Provide drill-down from a generated change to the underlying model calls and tool actions.",
+          "stack": [
+            "TypeScript",
+            "Go",
+            "PostgreSQL-compatible database",
+            "Event streaming",
+            "OpenTelemetry-compatible telemetry",
+            "Web dashboard"
+          ],
+          "evidence": [
+            "A product focused on measuring team AI use is a direct market signal.",
+            "Concerns about automatic plugins and broad API-data sharing indicate a governance gap.",
+            "The combination of agent gateways, coding agents, and autonomous QA creates a need for cross-tool usage accounting.",
+            "Demand and scope remain directional until buyers confirm budget ownership."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "enterprise SaaS",
+            "compliance add-on",
+            "private deployment"
+          ],
+          "scores": {
+            "novelty": 7,
+            "feasibility": 8,
+            "impact": 8,
+            "effort": 7
+          },
+          "risks": [
+            "Telemetry collection may raise employee privacy concerns.",
+            "Coverage will be incomplete if activity bypasses instrumented paths.",
+            "Security and finance teams may disagree on ownership."
+          ],
+          "tags": [
+            "AI-governance",
+            "cost-management",
+            "engineering-analytics",
+            "security"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Define a minimum event schema and connect model calls, tool actions, repository changes, and cost attribution for one development workflow."
+        }
+      ]
+    },
+    {
+      "industry": "Software quality and data systems",
+      "ideas": [
+        {
+          "id": "agent-data-fabric",
+          "title": "Unified Agent Data Fabric for Structured and Semantic Queries",
+          "problem": "Agents need reliable access to structured tables, documents, vectors, and analytical files, but teams often maintain separate systems and duplicate data for each query mode.",
+          "solution": "Provide one governed data copy with SQL, keyword, vector, and provenance-aware access patterns optimized for agent workloads.",
+          "technical_approach": "Build ingestion connectors for tabular and columnar files, incremental metadata indexing, hybrid retrieval, SQL query planning, row-level authorization, freshness tracking, lineage, and response citations tied to exact records. Add workload-aware caching and query cost controls.",
+          "stack": [
+            "Rust",
+            "Python",
+            "Parquet-compatible storage",
+            "Columnar query engine",
+            "Vector index",
+            "Object storage",
+            "SQL API"
+          ],
+          "evidence": [
+            "A launch signal combines search, vectors, and SQL over one columnar copy for agents.",
+            "Several inputs show agents becoming a primary interface to data and tools.",
+            "The need is technically deeper than a retrieval wrapper because governance, freshness, query planning, and lineage are central.",
+            "This is a high-potential inference requiring validation with data platform teams."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "usage-based data infrastructure",
+            "enterprise SaaS",
+            "private deployment"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 9,
+            "effort": 9
+          },
+          "risks": [
+            "Data correctness and authorization failures are high impact.",
+            "Storage and compute economics may be difficult for small customers.",
+            "Established data systems may add similar hybrid query features."
+          ],
+          "tags": [
+            "data-infrastructure",
+            "hybrid-search",
+            "lineage",
+            "agent-platforms"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Implement a narrow proof of concept that ingests one columnar dataset and exposes governed SQL, keyword, and vector queries with record-level provenance."
+        },
+        {
+          "id": "visual-regression-agent",
+          "title": "Visual-State Regression Testing for Agent-Built Interfaces",
+          "problem": "Agent-generated interfaces can be structurally valid while still failing layout, accessibility, responsive behavior, interaction, or visual consistency requirements.",
+          "solution": "Create a testing system that compares rendered states, interaction traces, accessibility findings, and semantic intent across application versions.",
+          "technical_approach": "Capture browser states across viewports, derive component and layout fingerprints, replay user journeys, detect visual and interaction regressions, and correlate failures with source changes. Add baseline approval, flaky-test classification, and machine-readable findings for coding agents.",
+          "stack": [
+            "TypeScript",
+            "Browser automation",
+            "Computer vision libraries",
+            "SQLite-compatible local store",
+            "Object storage",
+            "Continuous integration runners"
+          ],
+          "evidence": [
+            "Autonomous QA and visual problem framing are both visible product signals.",
+            "Agent-generated applications increase the volume of interface changes requiring automated verification.",
+            "A dedicated visual-state system addresses a concrete gap between code-level tests and user-visible behavior.",
+            "The market opportunity is an inference from related product activity."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "developer SaaS",
+            "usage-based testing",
+            "enterprise license"
+          ],
+          "scores": {
+            "novelty": 7,
+            "feasibility": 8,
+            "impact": 8,
+            "effort": 7
+          },
+          "risks": [
+            "Visual diffs can produce noisy results.",
+            "Browser and operating-system variation complicates reproducibility.",
+            "Teams may consider existing testing suites sufficient."
+          ],
+          "tags": [
+            "visual-testing",
+            "browser-automation",
+            "accessibility",
+            "continuous-integration"
+          ],
+          "status": "new",
+          "confidence": "medium",
+          "next_action": "Test a browser journey corpus against intentionally introduced layout and interaction regressions, measuring precision and triage time."
+        }
+      ]
+    },
+    {
+      "industry": "Data preservation and infrastructure operations",
+      "ideas": [
+        {
+          "id": "ai-archive-orchestrator",
+          "title": "AI Dataset Archive Lifecycle Orchestrator",
+          "problem": "Large AI datasets, model artifacts, and generated media are expensive to retain, difficult to classify, and rarely connected to reproducibility, legal retention, or retrieval requirements.",
+          "solution": "Manage the lifecycle of high-volume technical archives across fast and offline storage tiers while preserving metadata, integrity, provenance, and restore procedures.",
+          "technical_approach": "Use content-addressed manifests, deduplication, policy-based tiering, integrity checks, immutable retention windows, searchable metadata, restore drills, and cost forecasting. Support dataset snapshots linked to experiments, model versions, and evaluation results.",
+          "stack": [
+            "Rust",
+            "Object storage",
+            "Tape-compatible archival interface",
+            "Content-addressed metadata store",
+            "Columnar metadata index",
+            "Kubernetes-compatible workers"
+          ],
+          "evidence": [
+            "A strong demand signal indicates rapidly increasing archival requirements driven by AI workloads.",
+            "The input explicitly points to growth in long-term storage capacity for technical data.",
+            "Reproducibility and restore verification are natural operational needs inferred from the volume and sensitivity of such archives.",
+            "The business case should be validated with organizations managing large model or media collections."
+          ],
+          "sources": [
+            "research-input-1"
+          ],
+          "business_models": [
+            "enterprise SaaS",
+            "managed infrastructure",
+            "storage-usage margin"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 8,
+            "effort": 8
+          },
+          "risks": [
+            "Hardware and storage economics can compress margins.",
+            "Archive restores may be slow and operationally complex.",
+            "Customers may build lifecycle management into existing storage systems."
+          ],
+          "tags": [
+            "archival-storage",
+            "AI-infrastructure",
+            "data-governance",
+            "disaster-recovery"
+          ],
+          "status": "new",
+          "confidence": "medium",
+          "next_action": "Model storage costs and restore requirements for a representative dataset portfolio, then build manifesting, deduplication, and restore-drill workflows."
+        }
+      ]
+    },
+    {
+      "industry": "Hardware engineering and robotics",
+      "ideas": [
+        {
+          "id": "hardware-design-verifier",
+          "title": "Hardware Design Verification Workspace",
+          "problem": "Hardware teams must connect requirements, schematics, mechanical constraints, simulations, test results, and manufacturing changes, but design evidence is fragmented and difficult to review.",
+          "solution": "Provide a traceable workspace that links design artifacts to requirements and automatically identifies missing constraints, inconsistent revisions, and unverified claims.",
+          "technical_approach": "Ingest structured design files, diagrams, test logs, and requirements; build a graph of components and dependencies; run rule-based electrical and mechanical checks; support simulation adapters; and generate review packets with evidence links. Use models only for extraction and candidate issue generation, with deterministic checks for release decisions.",
+          "stack": [
+            "Python",
+            "TypeScript",
+            "Graph database",
+            "Object storage",
+            "Rule engine",
+            "CAD and schematic import adapters"
+          ],
+          "evidence": [
+            "A product positioned as an agent-assisted environment for hardware engineering is a direct launch signal.",
+            "An open-source room-scale gripper robot demonstrates interest in accessible robotics hardware and practical manipulation systems.",
+            "The opportunity is differentiated by traceability and verification rather than generic design generation.",
+            "This combines two signals and should be treated as an inference."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "enterprise SaaS",
+            "engineering services plus software",
+            "private deployment"
+          ],
+          "scores": {
+            "novelty": 9,
+            "feasibility": 6,
+            "impact": 9,
+            "effort": 9
+          },
+          "risks": [
+            "File-format interoperability is difficult.",
+            "Engineering liability requires conservative release controls.",
+            "Sales cycles and domain expertise requirements may be substantial."
+          ],
+          "tags": [
+            "hardware-engineering",
+            "robotics",
+            "verification",
+            "digital-thread"
+          ],
+          "status": "new",
+          "confidence": "medium",
+          "next_action": "Choose one artifact chain, such as requirements to schematic to test evidence, and validate traceability with a small hardware design team."
+        }
+      ]
+    },
+    {
+      "industry": "Privacy and edge computing",
+      "ideas": [
+        {
+          "id": "local-model-workbench",
+          "title": "Private Local Model Operations Workbench",
+          "problem": "Teams want capable model experimentation and automation on personal or isolated machines but lack safe tooling for model inspection, conversion, benchmarking, and controlled execution.",
+          "solution": "Offer a local-first workbench for inspecting model artifacts, running reproducible benchmarks, managing adapters, and exposing tightly scoped local services without sending sensitive data away.",
+          "technical_approach": "Support quantized model formats, memory-aware execution, model metadata inspection, deterministic benchmark suites, hardware capability detection, process isolation, local secrets management, and optional peer-to-peer artifact transfer.",
+          "stack": [
+            "Rust",
+            "Python",
+            "Native inference runtime",
+            "SQLite-compatible metadata store",
+            "Local web interface",
+            "Container or sandbox isolation"
+          ],
+          "evidence": [
+            "A high-engagement signal shows capable model interpretation running on a laptop.",
+            "Additional signals show demand for local coding agents and on-device model training or classification.",
+            "Privacy-preserving local execution is a recurring pattern across the inputs.",
+            "The opportunity is an inference from multiple product and discussion signals."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "paid desktop application",
+            "developer license",
+            "enterprise private deployment"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 8,
+            "effort": 8
+          },
+          "risks": [
+            "Hardware diversity increases support cost.",
+            "Model licensing and artifact compatibility may be complex.",
+            "Performance may lag managed services for demanding workloads."
+          ],
+          "tags": [
+            "edge-computing",
+            "local-inference",
+            "privacy",
+            "model-operations"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Build a desktop prototype that inspects model metadata, benchmarks local inference, and exposes a permissioned local endpoint."
+        }
+      ]
+    }
+  ],
+  "ideas_by_business_model": [
+    {
+      "business_model": "enterprise SaaS",
+      "ideas": [
+        {
+          "id": "policy-agent-gateway",
+          "title": "Policy-Controlled Agent Action Gateway"
+        },
+        {
+          "id": "agent-quality-control-plane",
+          "title": "Evidence-Based Agent Quality Control Plane"
+        },
+        {
+          "id": "ai-usage-governance",
+          "title": "AI Engineering Usage and Risk Ledger"
+        },
+        {
+          "id": "visual-regression-agent",
+          "title": "Visual-State Regression Testing for Agent-Built Interfaces"
+        },
+        {
+          "id": "hardware-design-verifier",
+          "title": "Hardware Design Verification Workspace"
+        }
+      ]
+    },
+    {
+      "business_model": "usage-based infrastructure",
+      "ideas": [
+        {
+          "id": "agent-data-fabric",
+          "title": "Unified Agent Data Fabric for Structured and Semantic Queries"
+        },
+        {
+          "id": "ai-archive-orchestrator",
+          "title": "AI Dataset Archive Lifecycle Orchestrator"
+        },
+        {
+          "id": "agent-quality-control-plane",
+          "title": "Evidence-Based Agent Quality Control Plane"
+        }
+      ]
+    },
+    {
+      "business_model": "private deployment",
+      "ideas": [
+        {
+          "id": "policy-agent-gateway",
+          "title": "Policy-Controlled Agent Action Gateway"
+        },
+        {
+          "id": "agent-data-fabric",
+          "title": "Unified Agent Data Fabric for Structured and Semantic Queries"
+        },
+        {
+          "id": "ai-usage-governance",
+          "title": "AI Engineering Usage and Risk Ledger"
+        },
+        {
+          "id": "ai-archive-orchestrator",
+          "title": "AI Dataset Archive Lifecycle Orchestrator"
+        },
+        {
+          "id": "hardware-design-verifier",
+          "title": "Hardware Design Verification Workspace"
+        },
+        {
+          "id": "local-model-workbench",
+          "title": "Private Local Model Operations Workbench"
+        }
+      ]
+    },
+    {
+      "business_model": "developer SaaS",
+      "ideas": [
+        {
+          "id": "visual-regression-agent",
+          "title": "Visual-State Regression Testing for Agent-Built Interfaces"
+        },
+        {
+          "id": "local-model-workbench",
+          "title": "Private Local Model Operations Workbench"
+        }
+      ]
+    },
+    {
+      "business_model": "paid desktop application",
+      "ideas": [
+        {
+          "id": "local-model-workbench",
+          "title": "Private Local Model Operations Workbench"
+        }
+      ]
+    }
+  ],
+  "recommended_next_queries": [
+    "Validate how engineering and security teams currently authorize agent actions, review tool calls, and investigate failures.",
+    "Measure willingness to pay for agent evaluation based on regression reduction, release confidence, and triage-time savings.",
+    "Identify the minimum telemetry required to attribute AI usage to projects, environments, data classes, and budgets.",
+    "Test whether data teams prefer a unified hybrid query layer or separate systems connected through a governed interface.",
+    "Quantify archive growth, restore frequency, retention obligations, and acceptable recovery times for AI datasets and artifacts.",
+    "Interview hardware teams about artifact interoperability, verification evidence, and review bottlenecks.",
+    "Benchmark local model workflows across varied consumer and workstation hardware.",
+    "Compare buyer ownership and procurement paths for security, developer productivity, data infrastructure, and compliance products."
+  ],
+  "blocked_sources": []
+}
