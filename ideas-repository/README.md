@@ -1,17 +1,23 @@
-# Research-derived opportunity repository
+# Opportunity Repository
 
-## Interpretation
-The repository prioritizes opportunities where the supplied inputs indicate operational pain, security exposure, recurring workflow friction, or measurable demand. Engagement counts and feature requests are treated as signals rather than proof of willingness to pay.
+## Selection method
+Ideas were selected from recurring technical signals involving security exposure, autonomous software reliability, operational technology defense, low-cost infrastructure management, desktop performance, and privacy-preserving personal computing.
 
-## Scoring
-Scores use a 1-to-10 scale. Novelty measures differentiation potential. Feasibility measures the likelihood of building a credible initial product. Impact measures potential customer value. Effort measures implementation difficulty, where a higher score means more effort and therefore greater execution burden.
+## Prioritization criteria
+- Pain severity and operational consequences
+- Evidence of public interest in the supplied inputs
+- Technical defensibility
+- Implementation feasibility
+- Clarity of buyer and business model
+- Ability to validate through a narrow prototype
 
-## Research limitations
-The inputs are public technical and product-discovery excerpts. They do not establish customer budgets, retention, competitive saturation, regulatory approval, or production reliability. Ideas marked with medium confidence require stronger customer validation or technical access before significant investment.
+## Recommended sequence
+1. Validate preventive controls for coding-agent secret exposure.
+2. Prototype reproducible evaluation for autonomous software changes.
+3. Test a connected-equipment deception module with security teams.
+4. Build a minimal fleet manager for inexpensive Linux nodes.
+5. Explore native desktop migration assessment after securing design partners.
+6. Validate privacy expectations before expanding the personal relationship graph.
 
-## Recommended validation sequence
-1. Prototype the narrowest technically defensible workflow.
-2. Measure latency, accuracy, cost, recovery behavior, and operator workload.
-3. Interview target operators about existing workarounds and procurement constraints.
-4. Test whether auditability, rollback, or policy controls support paid adoption.
-5. Expand only after a measurable operational outcome is demonstrated.
+## Validation standard
+Each opportunity should begin with a narrow workflow, measurable baseline metrics, explicit failure handling, and interviews with prospective users before broad feature development.
