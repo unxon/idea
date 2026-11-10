@@ -1,20 +1,20 @@
-# Research-Derived Software Opportunities
+# Research-Derived Software Opportunity Brief
 
-## Scope
-This repository converts the supplied public technical signals into software opportunities with emphasis on measurable pain, technical defensibility, implementation feasibility, and plausible monetization.
+## Method
+The opportunity set was derived only from the supplied research inputs. Ideas were selected when the inputs indicated visible demand, technical change, operational friction, or emerging infrastructure requirements. Engagement levels are treated as directional signals rather than proof of willingness to pay.
 
-## Interpretation rules
-- Engagement counts are treated as demand signals, not proof of purchasing intent.
-- Product descriptions are treated as market indicators, not validation of unmet demand.
-- Statements labeled as signals or inferences require customer interviews and prototype testing.
-- Security, accessibility, and infrastructure concepts should be validated with failure-mode analysis before production use.
+## Priority themes
+- Governed execution for automated software agents
+- Structured repository context and code intelligence
+- Real-time financial operations
+- Authoritative geospatial data products
+- Satellite-derived operational monitoring
+- Energy and industrial planning software
+- Accessibility-focused media processing
+- Privacy-preserving personal-data access
 
-## Priority validation sequence
-1. Test the coding-agent security gateway with real permission and secret-leak scenarios.
-2. Prototype email authentication drift detection using read-only analysis.
-3. Test project-isolated agent context with reproducible session replay.
-4. Evaluate explainable change-risk scoring on synthetic repositories.
-5. Validate incident-context correlation using controlled outage simulations.
+## Selection criteria
+Each idea was evaluated for pain clarity, technical depth, implementation feasibility, expected impact, differentiation, and likely business-model fit. Scores are directional integers from 1 to 10. Effort is a relative delivery-effort score, where a higher score indicates greater effort or complexity.
 
-## Quality bar
-Each opportunity should demonstrate a specific user pain, a technically differentiated mechanism, a measurable outcome, a credible buyer, and a safe path from prototype to production.
+## Important inference boundary
+The inputs provide attention and product signals, not customer interviews, revenue data, retention data, or verified purchasing intent. The strongest next step for every opportunity is a focused prototype paired with interviews and measurable workflow outcomes.
