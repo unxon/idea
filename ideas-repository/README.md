@@ -1,20 +1,26 @@
-# Research-Derived Software Opportunity Brief
+# Opportunity portfolio
 
-## Method
-The opportunity set was derived only from the supplied research inputs. Ideas were selected when the inputs indicated visible demand, technical change, operational friction, or emerging infrastructure requirements. Engagement levels are treated as directional signals rather than proof of willingness to pay.
+## Selection thesis
 
-## Priority themes
-- Governed execution for automated software agents
-- Structured repository context and code intelligence
-- Real-time financial operations
-- Authoritative geospatial data products
-- Satellite-derived operational monitoring
-- Energy and industrial planning software
-- Accessibility-focused media processing
-- Privacy-preserving personal-data access
+The portfolio prioritizes infrastructure and workflow products that address reliability, safety, portability, provenance, and operational control. The strongest signals concern software-generated fragility, isolated execution, behavioral validation, local device autonomy, repository portability, and evidence-linked field reporting.
 
-## Selection criteria
-Each idea was evaluated for pain clarity, technical depth, implementation feasibility, expected impact, differentiation, and likely business-model fit. Scores are directional integers from 1 to 10. Effort is a relative delivery-effort score, where a higher score indicates greater effort or complexity.
+## Recommended sequencing
 
-## Important inference boundary
-The inputs provide attention and product signals, not customer interviews, revenue data, retention data, or verified purchasing intent. The strongest next step for every opportunity is a focused prototype paired with interviews and measurable workflow outcomes.
+1. Validate Agent Change Assurance Engine with engineering teams experiencing rising review and regression costs.
+2. Prototype Agent Sandbox Observability Plane for isolated command-line and code-execution workloads.
+3. Test Offline Device Control Plane with a narrow set of interoperable devices and offline automation scenarios.
+4. Pilot Evidence-First Inspection Workflow in one regulated field domain.
+5. Release Portable Repository Readiness Analyzer as a focused command-line product before expanding into hosted environments.
+
+## Common design principles
+
+- Keep generated conclusions linked to observable evidence.
+- Make uncertainty and policy decisions explicit.
+- Support local or private execution when data sensitivity is high.
+- Prefer reproducible artifacts over opaque scores.
+- Treat human approval as a configurable control, not as an afterthought.
+- Build narrow vertical workflows before broadening the product surface.
+
+## Validation gaps
+
+The inputs do not establish willingness to pay, buyer ownership, competitive saturation, deployment budgets, or retention. Customer interviews, pricing tests, technical benchmarks, and pilots are required before committing to a large implementation.
