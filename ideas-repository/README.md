@@ -1,26 +1,15 @@
-# Opportunity portfolio
+## Research synthesis
 
-## Selection thesis
-
-The portfolio prioritizes infrastructure and workflow products that address reliability, safety, portability, provenance, and operational control. The strongest signals concern software-generated fragility, isolated execution, behavioral validation, local device autonomy, repository portability, and evidence-linked field reporting.
+The inputs indicate recurring demand for control layers around automation rather than another general-purpose assistant. The most credible opportunities combine a concrete operational failure mode with measurable technical outcomes.
 
 ## Recommended sequencing
 
-1. Validate Agent Change Assurance Engine with engineering teams experiencing rising review and regression costs.
-2. Prototype Agent Sandbox Observability Plane for isolated command-line and code-execution workloads.
-3. Test Offline Device Control Plane with a narrow set of interoperable devices and offline automation scenarios.
-4. Pilot Evidence-First Inspection Workflow in one regulated field domain.
-5. Release Portable Repository Readiness Analyzer as a focused command-line product before expanding into hosted environments.
+1. Start with the cloud compatibility lab because a narrow contract-testing prototype can demonstrate value without requiring deep external partnerships.
+2. Build the automation dependency control plane next because inventory, immutable references, and policy checks are independently valuable.
+3. Add retrieval evaluation once a measurable corpus and workload benchmark are available.
+4. Pursue agent session control after defining a portable session event model and secure capability boundary.
+5. Treat facility operations and transaction authorization as regulated or liability-sensitive expansion areas.
 
-## Common design principles
+## Validation standard
 
-- Keep generated conclusions linked to observable evidence.
-- Make uncertainty and policy decisions explicit.
-- Support local or private execution when data sensitivity is high.
-- Prefer reproducible artifacts over opaque scores.
-- Treat human approval as a configurable control, not as an afterthought.
-- Build narrow vertical workflows before broadening the product surface.
-
-## Validation gaps
-
-The inputs do not establish willingness to pay, buyer ownership, competitive saturation, deployment budgets, or retention. Customer interviews, pricing tests, technical benchmarks, and pilots are required before committing to a large implementation.
+For each opportunity, measure a baseline before implementation, define a repeatable benchmark, capture false-positive and false-negative rates, and verify whether the proposed control reduces cost, incident exposure, integration time, or operator effort.
