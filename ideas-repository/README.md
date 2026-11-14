@@ -1,17 +1,26 @@
-# Software Ideas Repository
+# Research-Derived Software Opportunities
 
-## Research scope
-This repository was derived exclusively from the supplied technical research inputs. The analysis prioritizes recurring operational pain, implementation depth, feasibility, and observable demand signals.
+## Selection method
+
+Ideas were selected from repeated or high-engagement signals in the supplied inputs. Priority was given to problems with measurable operational cost, technical defensibility, feasible first releases, and business models that can support ongoing infrastructure or integration work.
+
+## Strongest themes
+
+- Operational continuity during transport disruptions
+- Governed execution environments for autonomous software workers
+- Repeatable simulation and evaluation of multi-step software tasks
+- Local control and privacy for connected devices
+- Evidence-based custody for high-value shipments
+- User-controlled analysis of cross-domain personal data
 
 ## Interpretation notes
-- Evidence statements distinguish direct signals from inferences.
-- Scores use a 1–10 scale.
-- Effort reflects implementation difficulty, integration burden, and operational complexity; a higher score means greater effort.
-- The strongest opportunities are infrastructure and verification products rather than generic conversational interfaces.
 
-## Recommended validation sequence
-1. Validate the agent reliability opportunity with teams already operating autonomous workflows.
-2. Test sandbox requirements using repository-editing or desktop-automation workloads.
-3. Prototype governed context persistence for a narrowly defined multi-step workflow.
-4. Measure willingness to pay for resilience drills tied to revenue-critical processes.
-5. Evaluate evidence quality and false-negative rates for secure release verification.
+Engagement counts are treated as demand signals rather than proof of willingness to pay. Product listings are treated as evidence of category activity rather than validation of a specific unmet need. Several opportunities are explicitly marked as inferences because they synthesize adjacent signals instead of relying on a direct request.
+
+## Recommended sequencing
+
+1. Prototype the disruption impact graph and the agent runtime policy layer because both have clear technical boundaries and strong operational value.
+2. Validate the high-value custody workflow with buyers, carriers, and insurers before investing in custom telemetry hardware.
+3. Build evaluation scenarios alongside any agent runtime implementation to create a measurable reliability advantage.
+4. Start connected-device work with read-only discovery to reduce safety and compatibility risk.
+5. Keep personal analytics local-first and narrow the initial use case before adding cross-domain interpretation.
