@@ -1,26 +1,23 @@
-# Research-Derived Software Opportunities
+# Software Ideas Research Repository
 
-## Selection method
+## Research basis
+The repository was generated from two supplied public-technical research inputs containing incident reports, technical discussions, product-category activity, engagement counts, and emerging infrastructure themes.
 
-Ideas were selected from repeated or high-engagement signals in the supplied inputs. Priority was given to problems with measurable operational cost, technical defensibility, feasible first releases, and business models that can support ongoing infrastructure or integration work.
+## Selection criteria
+Ideas were prioritized using five dimensions:
 
-## Strongest themes
-
-- Operational continuity during transport disruptions
-- Governed execution environments for autonomous software workers
-- Repeatable simulation and evaluation of multi-step software tasks
-- Local control and privacy for connected devices
-- Evidence-based custody for high-value shipments
-- User-controlled analysis of cross-domain personal data
+- Clear operational or security pain
+- Technical depth and defensibility
+- Feasible initial implementation scope
+- Evidence of attention or emerging demand
+- Measurable business or risk-reduction outcomes
 
 ## Interpretation notes
+Engagement counts are treated as demand signals rather than proof of purchasing intent. Where the input does not directly establish a customer problem or budget, the idea records that conclusion as an inference. Generic conversational assistants were excluded in favor of infrastructure, governance, security, preservation, and specialized technical workflows.
 
-Engagement counts are treated as demand signals rather than proof of willingness to pay. Product listings are treated as evidence of category activity rather than validation of a specific unmet need. Several opportunities are explicitly marked as inferences because they synthesize adjacent signals instead of relying on a direct request.
-
-## Recommended sequencing
-
-1. Prototype the disruption impact graph and the agent runtime policy layer because both have clear technical boundaries and strong operational value.
-2. Validate the high-value custody workflow with buyers, carriers, and insurers before investing in custom telemetry hardware.
-3. Build evaluation scenarios alongside any agent runtime implementation to create a measurable reliability advantage.
-4. Start connected-device work with read-only discovery to reduce safety and compatibility risk.
-5. Keep personal analytics local-first and narrow the initial use case before adding cross-domain interpretation.
+## Recommended validation sequence
+1. Interview the operational owner of the stated pain.
+2. Quantify current failure cost, manual effort, or security exposure.
+3. Build a narrow passive-monitoring or reporting prototype.
+4. Validate integration requirements before adding automation.
+5. Convert the strongest measurable outcome into pricing and a pilot contract.
