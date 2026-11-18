@@ -1,23 +1,17 @@
-# Software Ideas Research Repository
+# Research-derived opportunity repository
 
-## Research basis
-The repository was generated from two supplied public-technical research inputs containing incident reports, technical discussions, product-category activity, engagement counts, and emerging infrastructure themes.
+## Core thesis
+The strongest opportunities are control-plane products for systems becoming more autonomous, distributed, and dependent on volatile external services. The recurring unmet needs are verification, provenance, continuity, authorization, calibrated uncertainty, and durable evidence.
 
-## Selection criteria
-Ideas were prioritized using five dimensions:
+## Prioritization method
+Ideas were prioritized using five criteria: severity of the observed pain, strength of demand signal, technical defensibility, implementation feasibility, and clarity of a paying customer. Scores are directional integers from 1 to 10. Any statement labeled as an inference is derived from multiple signals rather than directly established by the inputs.
 
-- Clear operational or security pain
-- Technical depth and defensibility
-- Feasible initial implementation scope
-- Evidence of attention or emerging demand
-- Measurable business or risk-reduction outcomes
+## Recommended build sequence
+1. Build dependency continuity controls because the first version can be narrowly scoped to artifact mirroring, integrity verification, and restore testing.
+2. Build agent-change verification next because it can integrate into existing code-review workflows and demonstrate measurable reductions in review risk.
+3. Add runtime exploit containment as a security-focused product with a high-value incident-response expansion.
+4. Explore service withdrawal orchestration after validating demand with organizations operating multiple external dependencies.
+5. Treat autonomous transaction controls as a later-stage opportunity beginning with non-custodial authorization and simulation.
 
-## Interpretation notes
-Engagement counts are treated as demand signals rather than proof of purchasing intent. Where the input does not directly establish a customer problem or budget, the idea records that conclusion as an inference. Generic conversational assistants were excluded in favor of infrastructure, governance, security, preservation, and specialized technical workflows.
-
-## Recommended validation sequence
-1. Interview the operational owner of the stated pain.
-2. Quantify current failure cost, manual effort, or security exposure.
-3. Build a narrow passive-monitoring or reporting prototype.
-4. Validate integration requirements before adding automation.
-5. Convert the strongest measurable outcome into pricing and a pilot contract.
+## Portfolio risks
+The main cross-cutting risks are permission constraints, false positives, integration complexity, unstable external interfaces, privacy exposure, and the possibility that customers view monitoring as optional until a serious incident occurs.
