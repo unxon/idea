@@ -1,11 +1,522 @@
 {
-  "run_id": "run-1795037407573",
-  "timestamp": "2026-11-18T21:30:07.573Z",
+  "run_id": "run-1795059006132",
+  "timestamp": "2026-11-19T03:30:06.132Z",
   "counts": {
-    "industries": 0,
-    "business_models": 0,
-    "total_ideas": 0
+    "industries": 5,
+    "business_models": 7,
+    "total_ideas": 8
   },
-  "ideas_by_industry": [],
-  "ideas_by_business_model": []
+  "ideas_by_industry": [
+    {
+      "industry": "Cybersecurity",
+      "ideas": [
+        {
+          "id": "runtime-vulnerability-remediator",
+          "title": "Runtime Vulnerability Remediation Control Plane",
+          "problem": "Security teams receive urgent vulnerability disclosures but lack a reliable way to determine which deployed services are reachable, affected, exploitable, and safely remediated across heterogeneous environments.",
+          "solution": "Continuously map vulnerable components to running workloads, reproduce exploit conditions in isolated environments, prioritize exposed assets, and coordinate tested mitigations with auditable evidence.",
+          "technical_approach": "Build an asset and dependency graph from images, packages, runtime telemetry, configuration, and network exposure. Use isolated replay environments for exploit validation, policy-based risk scoring, canary patches, and signed remediation records.",
+          "stack": [
+            "Go",
+            "Rust",
+            "Kubernetes",
+            "OpenTelemetry",
+            "PostgreSQL",
+            "eBPF",
+            "WASM sandboxes"
+          ],
+          "evidence": [
+            "A remote unauthenticated code-execution disclosure received very high engagement, signaling persistent urgency around externally reachable vulnerabilities.",
+            "A separate language-runtime vulnerability disclosure also attracted substantial attention, indicating demand across both infrastructure and application ecosystems.",
+            "The opportunity is a signal that teams need remediation verification, not merely vulnerability notification."
+          ],
+          "sources": [
+            "research-input-1"
+          ],
+          "business_models": [
+            "enterprise subscription",
+            "managed security service",
+            "usage-based scanning"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 10,
+            "effort": 8
+          },
+          "risks": [
+            "Exploit reproduction may create operational or legal exposure.",
+            "Accurate asset and dependency discovery is difficult in incomplete environments.",
+            "Patch automation requires strong rollback and approval controls."
+          ],
+          "tags": [
+            "vulnerability-management",
+            "runtime-security",
+            "exploit-validation",
+            "remediation"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Interview security and platform teams about their response workflow for externally reachable critical vulnerabilities and prototype dependency-to-runtime mapping."
+        }
+      ]
+    },
+    {
+      "industry": "Developer Tools",
+      "ideas": [
+        {
+          "id": "failure-replay-lab",
+          "title": "Deterministic Build Failure Replay Lab",
+          "problem": "When an automated build or deployment fails, developers often lack the exact environment, artifacts, credentials model, and state needed to reproduce the failure locally.",
+          "solution": "Capture failure provenance and generate a disposable, privacy-preserving replay environment that reconstructs the relevant workflow step, dependencies, logs, and inputs.",
+          "technical_approach": "Collect workflow manifests, container layers, dependency locks, environment schemas, test fixtures, and event timelines. Use content-addressed caching, local virtualization, secret redaction, and differential replay to identify the smallest failing condition.",
+          "stack": [
+            "Go",
+            "OCI containers",
+            "Firecracker",
+            "Nix",
+            "OpenTelemetry",
+            "SQLite",
+            "object storage"
+          ],
+          "evidence": [
+            "A tool focused on reproducing failed automated runs locally appeared among highly engaged developer projects, signaling a concrete pain point.",
+            "Multiple products in the inputs address broken builds or coding-agent verification, suggesting that failure recovery is becoming a distinct workflow category.",
+            "The inference is that reproducibility remains valuable even as code generation becomes more automated."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "developer subscription",
+            "team workspace subscription",
+            "enterprise self-hosted license"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 7
+          },
+          "risks": [
+            "Some failures depend on unavailable external services or nondeterministic timing.",
+            "Environment capture can expose secrets or proprietary data.",
+            "Runtime and storage costs may grow quickly for large repositories."
+          ],
+          "tags": [
+            "build-reliability",
+            "debugging",
+            "reproducibility",
+            "developer-productivity"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Build a proof of concept that converts one failed workflow artifact into a local containerized replay with automatic secret redaction."
+        },
+        {
+          "id": "agent-change-verifier",
+          "title": "Change Verification Fabric for Coding Agents",
+          "problem": "Automated coding systems can produce plausible changes that pass narrow tests while breaking visual behavior, accessibility, performance, or undocumented product invariants.",
+          "solution": "Create a verification layer that evaluates generated changes against behavioral, visual, accessibility, security, and regression policies before merge or deployment.",
+          "technical_approach": "Combine browser and API replay, screenshot and animation diffs, accessibility audits, contract tests, trace comparison, risk-based test selection, and human approval queues. Store evidence as immutable change attestations.",
+          "stack": [
+            "TypeScript",
+            "Playwright",
+            "OpenTelemetry",
+            "PostgreSQL",
+            "WebAssembly",
+            "containerized runners"
+          ],
+          "evidence": [
+            "The inputs show several products focused on visual testing, animation regression, self-healing quality, and coding-agent self-checks.",
+            "The clustering of these products signals that generated code increases demand for independent verification rather than only generation.",
+            "A broader inference is that quality assurance can become a policy and evidence layer across multiple development agents."
+          ],
+          "sources": [
+            "research-input-2"
+          ],
+          "business_models": [
+            "usage-based testing",
+            "per-seat subscription",
+            "enterprise quality platform"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 8
+          },
+          "risks": [
+            "Visual differences can produce noisy alerts.",
+            "Browser and device coverage can become expensive.",
+            "Teams may resist additional merge gates without strong precision."
+          ],
+          "tags": [
+            "agent-verification",
+            "visual-regression",
+            "accessibility",
+            "software-quality"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Validate a narrow wedge around generated front-end changes using screenshot, accessibility, and interaction replay checks."
+        },
+        {
+          "id": "model-route-evaluator",
+          "title": "Model Route and Quality Evaluation Gateway",
+          "problem": "Teams adopting multiple language and multimodal models struggle to balance cost, latency, reliability, privacy, and task quality across changing workloads.",
+          "solution": "Provide an evaluation-driven gateway that routes each request to an appropriate model or local execution path and continuously measures quality, cost, latency, failure modes, and drift.",
+          "technical_approach": "Use typed task contracts, offline benchmark suites, shadow traffic, adaptive routing, redaction, budget policies, fallback chains, and outcome-based evaluation. Keep prompts, outputs, and metrics versioned with configurable retention.",
+          "stack": [
+            "Rust",
+            "Python",
+            "OpenTelemetry",
+            "ClickHouse",
+            "Redis",
+            "Kubernetes",
+            "evaluation workers"
+          ],
+          "evidence": [
+            "The inputs feature several newly released models emphasizing capability, long-running work, speed, and low price-performance.",
+            "High engagement with model announcements indicates strong market attention, while multiple products expose model-driven workflows.",
+            "The opportunity is an inference that model proliferation creates operational complexity requiring neutral measurement and routing."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "usage-based API",
+            "enterprise platform subscription",
+            "private deployment license"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 7
+          },
+          "risks": [
+            "Quality metrics may not correlate with business outcomes.",
+            "Routing decisions can create privacy and data residency concerns.",
+            "Model providers and interfaces change rapidly."
+          ],
+          "tags": [
+            "model-routing",
+            "evaluation",
+            "cost-control",
+            "observability"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Develop a benchmark harness for three task classes with configurable quality, latency, and cost policies, then test routing against recorded synthetic workloads."
+        }
+      ]
+    },
+    {
+      "industry": "Enterprise Operations",
+      "ideas": [
+        {
+          "id": "audit-evidence-workbench",
+          "title": "Evidence-First Audit Investigation Workbench",
+          "problem": "Audit teams spend significant time collecting records, asking repetitive questions, reconciling conflicting evidence, and documenting why a conclusion is justified.",
+          "solution": "Provide a controlled investigation workspace that proposes high-value questions, links each answer to source evidence, identifies contradictions, and produces reviewable workpapers without making unsupervised decisions.",
+          "technical_approach": "Use a permissioned evidence graph, document and transaction connectors, structured question planning, provenance-preserving retrieval, contradiction detection, confidence calibration, and mandatory human sign-off for conclusions.",
+          "stack": [
+            "Python",
+            "PostgreSQL",
+            "OpenSearch",
+            "object storage",
+            "policy engine",
+            "event-sourced workflow"
+          ],
+          "evidence": [
+            "The inputs describe agent-assisted audit work that generated stronger questions than conventional workflows, signaling potential for investigation support.",
+            "The framing emphasizes questions and evidence rather than autonomous conclusions, which is appropriate for regulated operations.",
+            "The inference is that audit productivity gains are more defensible when every output remains traceable to underlying records."
+          ],
+          "sources": [
+            "research-input-1"
+          ],
+          "business_models": [
+            "enterprise subscription",
+            "professional services implementation",
+            "regulated-industry private deployment"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 9,
+            "effort": 8
+          },
+          "risks": [
+            "Incorrect evidence linkage could undermine trust.",
+            "Sensitive financial and personal data require strict controls.",
+            "Audit standards and liability expectations vary by jurisdiction."
+          ],
+          "tags": [
+            "audit-technology",
+            "evidence-management",
+            "compliance",
+            "human-in-the-loop"
+          ],
+          "status": "new",
+          "confidence": "medium",
+          "next_action": "Prototype an evidence graph and question-ranking workflow using synthetic procurement or access-review records."
+        },
+        {
+          "id": "agent-data-access-layer",
+          "title": "Governed Data Access Layer for Operational Agents",
+          "problem": "Operational agents need current business data and actions, but direct access to fragmented systems creates inconsistent schemas, excessive permissions, stale results, and difficult auditability.",
+          "solution": "Offer a governed data and action layer that exposes typed capabilities, validates requests, enforces least privilege, and records complete execution provenance.",
+          "technical_approach": "Create connector adapters, canonical schemas, capability manifests, policy evaluation, row- and field-level authorization, caching with freshness guarantees, dry-run execution, and append-only audit logs.",
+          "stack": [
+            "TypeScript",
+            "PostgreSQL",
+            "GraphQL",
+            "Apache Arrow",
+            "OPA-compatible policy engine",
+            "Kafka"
+          ],
+          "evidence": [
+            "The inputs show multiple products positioning structured data access and agent connectivity as a distinct category.",
+            "Agent workspaces, workflow builders, and operational assistants all imply a need for dependable access to enterprise context.",
+            "The inference is that governance and semantic consistency are the durable layer beneath rapidly changing agent interfaces."
+          ],
+          "sources": [
+            "research-input-2"
+          ],
+          "business_models": [
+            "platform subscription",
+            "usage-based connector fees",
+            "enterprise integration services"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 10,
+            "effort": 8
+          },
+          "risks": [
+            "Connector maintenance becomes a major operating burden.",
+            "Permissions must match source-system semantics precisely.",
+            "Customers may prefer internal development for high-value data domains."
+          ],
+          "tags": [
+            "data-governance",
+            "agent-infrastructure",
+            "connectors",
+            "least-privilege"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Select one operational domain, define five typed capabilities, and demonstrate policy enforcement plus end-to-end provenance."
+        }
+      ]
+    },
+    {
+      "industry": "Infrastructure and Embedded Systems",
+      "ideas": [
+        {
+          "id": "offline-device-bridge",
+          "title": "Offline-First Compatibility Bridge for Cloud-Dependent Devices",
+          "problem": "Connected consumer and industrial devices can become unreliable or unusable when cloud services, network access, vendor endpoints, or authentication dependencies fail.",
+          "solution": "Provide a local compatibility layer that preserves essential device control, state synchronization, diagnostics, and safe recovery while offline or during vendor-service disruption.",
+          "technical_approach": "Implement protocol adapters, local state machines, encrypted credential storage, capability discovery, conflict-free synchronization, firmware-aware safety rules, and a test harness for protocol behavior.",
+          "stack": [
+            "Rust",
+            "SQLite",
+            "MQTT",
+            "mDNS",
+            "WebAssembly",
+            "embedded Linux"
+          ],
+          "evidence": [
+            "The inputs include a detailed effort to extract a key and keep a connected household device operating offline, signaling frustration with cloud dependency.",
+            "The example demonstrates that users may resort to low-level reverse engineering when essential local behavior is unavailable.",
+            "The inference is that offline continuity and interoperability can be valuable for devices with recurring connectivity or vendor-service failures."
+          ],
+          "sources": [
+            "research-input-1"
+          ],
+          "business_models": [
+            "device-management subscription",
+            "hardware gateway sales",
+            "enterprise fleet license"
+          ],
+          "scores": {
+            "novelty": 9,
+            "feasibility": 6,
+            "impact": 8,
+            "effort": 9
+          },
+          "risks": [
+            "Reverse engineering may conflict with contracts or regulations.",
+            "Safety-critical actions require conservative fail-safe behavior.",
+            "Vendor protocol changes can break compatibility."
+          ],
+          "tags": [
+            "offline-first",
+            "device-interoperability",
+            "edge-computing",
+            "local-control"
+          ],
+          "status": "new",
+          "confidence": "medium",
+          "next_action": "Choose a non-safety-critical device category and map the minimum local control surface needed for offline continuity."
+        }
+      ]
+    },
+    {
+      "industry": "Media and Simulation",
+      "ideas": [
+        {
+          "id": "interactive-simulation-runtime",
+          "title": "Browser-Native Legacy Software Simulation Runtime",
+          "problem": "Legacy interactive software often depends on platform-specific runtimes, installation steps, and unavailable hardware, limiting preservation, education, testing, and collaborative access.",
+          "solution": "Provide a secure browser runtime that packages legacy applications with deterministic input, network isolation, save-state management, and collaborative replay.",
+          "technical_approach": "Use WebAssembly or browser virtualization, filesystem snapshots, input event recording, asset deduplication, sandboxed networking, deterministic timing controls, and rights-aware distribution workflows.",
+          "stack": [
+            "WebAssembly",
+            "Rust",
+            "WebGPU",
+            "IndexedDB",
+            "content-addressed storage",
+            "WebRTC"
+          ],
+          "evidence": [
+            "The inputs include a browser-based revival of a legacy interactive application, signaling interest in accessible software preservation and low-friction execution.",
+            "A separate project visualizes a complex technical system down to component level, indicating appetite for interactive technical exploration.",
+            "The opportunity is an inference that browser-native simulation can serve preservation, training, and education beyond entertainment."
+          ],
+          "sources": [
+            "research-input-1"
+          ],
+          "business_models": [
+            "institutional licensing",
+            "education subscription",
+            "developer SDK licensing"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 6,
+            "impact": 7,
+            "effort": 9
+          },
+          "risks": [
+            "Rights and redistribution constraints may limit available content.",
+            "High-fidelity emulation can require substantial engineering.",
+            "Browser security and performance vary across devices."
+          ],
+          "tags": [
+            "simulation",
+            "software-preservation",
+            "webassembly",
+            "interactive-learning"
+          ],
+          "status": "new",
+          "confidence": "medium",
+          "next_action": "Create a small runtime for one legally distributable legacy application with save states and deterministic replay."
+        }
+      ]
+    }
+  ],
+  "ideas_by_business_model": [
+    {
+      "business_model": "enterprise subscription",
+      "ideas": [
+        {
+          "id": "runtime-vulnerability-remediator",
+          "title": "Runtime Vulnerability Remediation Control Plane"
+        },
+        {
+          "id": "audit-evidence-workbench",
+          "title": "Evidence-First Audit Investigation Workbench"
+        },
+        {
+          "id": "agent-data-access-layer",
+          "title": "Governed Data Access Layer for Operational Agents"
+        }
+      ]
+    },
+    {
+      "business_model": "usage-based infrastructure",
+      "ideas": [
+        {
+          "id": "model-route-evaluator",
+          "title": "Model Route and Quality Evaluation Gateway"
+        },
+        {
+          "id": "agent-change-verifier",
+          "title": "Change Verification Fabric for Coding Agents"
+        },
+        {
+          "id": "failure-replay-lab",
+          "title": "Deterministic Build Failure Replay Lab"
+        }
+      ]
+    },
+    {
+      "business_model": "enterprise private deployment",
+      "ideas": [
+        {
+          "id": "model-route-evaluator",
+          "title": "Model Route and Quality Evaluation Gateway"
+        },
+        {
+          "id": "audit-evidence-workbench",
+          "title": "Evidence-First Audit Investigation Workbench"
+        },
+        {
+          "id": "runtime-vulnerability-remediator",
+          "title": "Runtime Vulnerability Remediation Control Plane"
+        }
+      ]
+    },
+    {
+      "business_model": "developer subscription",
+      "ideas": [
+        {
+          "id": "failure-replay-lab",
+          "title": "Deterministic Build Failure Replay Lab"
+        },
+        {
+          "id": "agent-change-verifier",
+          "title": "Change Verification Fabric for Coding Agents"
+        }
+      ]
+    },
+    {
+      "business_model": "managed service",
+      "ideas": [
+        {
+          "id": "runtime-vulnerability-remediator",
+          "title": "Runtime Vulnerability Remediation Control Plane"
+        },
+        {
+          "id": "agent-data-access-layer",
+          "title": "Governed Data Access Layer for Operational Agents"
+        }
+      ]
+    },
+    {
+      "business_model": "hardware and gateway sales",
+      "ideas": [
+        {
+          "id": "offline-device-bridge",
+          "title": "Offline-First Compatibility Bridge for Cloud-Dependent Devices"
+        }
+      ]
+    },
+    {
+      "business_model": "institutional licensing",
+      "ideas": [
+        {
+          "id": "interactive-simulation-runtime",
+          "title": "Browser-Native Legacy Software Simulation Runtime"
+        }
+      ]
+    }
+  ]
 }
