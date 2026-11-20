@@ -1,17 +1,21 @@
-# Research-derived opportunity repository
+# Software Opportunity Repository
 
-## Core thesis
-The strongest opportunities are control-plane products for systems becoming more autonomous, distributed, and dependent on volatile external services. The recurring unmet needs are verification, provenance, continuity, authorization, calibrated uncertainty, and durable evidence.
+## Scope
+This repository converts the supplied technical and product-discovery signals into software opportunities with emphasis on operational pain, technical defensibility, implementation feasibility, and business demand.
 
-## Prioritization method
-Ideas were prioritized using five criteria: severity of the observed pain, strength of demand signal, technical defensibility, implementation feasibility, and clarity of a paying customer. Scores are directional integers from 1 to 10. Any statement labeled as an inference is derived from multiple signals rather than directly established by the inputs.
+## Selection principles
+- Prefer infrastructure, control planes, and workflow systems over generic conversational interfaces.
+- Prioritize opportunities with measurable outcomes such as fewer regressions, faster remediation, lower uncontrolled spend, or stronger auditability.
+- Treat repeated product themes as demand signals, not proof of market success.
+- Mark conclusions derived from multiple signals as inferences.
+- Favor products with integration, policy, data lineage, or execution-boundary advantages.
 
-## Recommended build sequence
-1. Build dependency continuity controls because the first version can be narrowly scoped to artifact mirroring, integrity verification, and restore testing.
-2. Build agent-change verification next because it can integrate into existing code-review workflows and demonstrate measurable reductions in review risk.
-3. Add runtime exploit containment as a security-focused product with a high-value incident-response expansion.
-4. Explore service withdrawal orchestration after validating demand with organizations operating multiple external dependencies.
-5. Treat autonomous transaction controls as a later-stage opportunity beginning with non-custodial authorization and simulation.
+## Highest-priority validation sequence
+1. Validate autonomous execution governance with security and platform engineering teams.
+2. Test regression-control workflows against real change histories and production incidents.
+3. Measure the time required to prioritize and document vulnerability remediation.
+4. Validate whether protocol integration governance is a budgeted enterprise problem.
+5. Confirm willingness to pay for claim-level provenance and audit exports.
 
-## Portfolio risks
-The main cross-cutting risks are permission constraints, false positives, integration complexity, unstable external interfaces, privacy exposure, and the possibility that customers view monitoring as optional until a serious incident occurs.
+## Common product risks
+The major cross-cutting risks are immature standards, integration complexity, false confidence from incomplete evidence, infrastructure cost, security liability, and long enterprise procurement cycles.
