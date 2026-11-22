@@ -1,0 +1,476 @@
+{
+  "run_id": "run-1795318207286",
+  "timestamp": "2026-11-22T03:30:07.286Z",
+  "research_summary": "The inputs show strong demand signals around trustworthy agent infrastructure, isolated execution, evaluation, developer productivity, security diagnostics, formal verification, and privacy-preserving local software. The highest-signal opportunities are infrastructure products that address operational risk or measurable engineering cost rather than generic conversational interfaces. Several signals are based on launch activity and discussion volume; they indicate interest but are not proof of willingness to pay.",
+  "top_opportunities": [
+    "Inference Data Boundary and Audit Gateway: strongest combination of urgent security pain, clear enterprise buyer, and measurable audit value.",
+    "Policy-Driven Ephemeral Workspaces for Software Agents: infrastructure-level differentiation with direct relevance to autonomous execution and security isolation.",
+    "Reproducible Agent Evaluation and Failure Replay: addresses the operational gap between agent demonstrations and dependable production systems.",
+    "Path-Scoped Code Access and Agent Permission Broker: converts least-privilege requirements into a focused control point for automated development workflows.",
+    "Build and Test Cost Control Plane: feasible entry point with measurable return through reduced execution time and infrastructure cost."
+  ],
+  "ideas_by_industry": [
+    {
+      "industry": "Developer infrastructure",
+      "ideas": [
+        {
+          "id": "agent-data-boundary",
+          "title": "Inference Data Boundary and Audit Gateway",
+          "problem": "Organizations cannot reliably determine what sensitive data is sent to external inference services, how it is transformed, or whether provider-side incidents affected their workloads.",
+          "solution": "A deployment gateway that classifies prompts and outputs, applies redaction and routing policies, records tamper-evident audit trails, and provides incident replay for every inference request.",
+          "technical_approach": "Deploy as an API-compatible proxy with configurable data-loss-prevention rules, field-level tokenization, provider routing, encrypted event storage, policy simulation, and automated incident timelines. Add workload-specific retention and access controls.",
+          "stack": [
+            "Go or Rust",
+            "HTTP and gRPC proxying",
+            "PostgreSQL-compatible audit store",
+            "OpenTelemetry",
+            "Container orchestration",
+            "Policy-as-code engine"
+          ],
+          "evidence": [
+            "Research-input-1 reports a data-processing incident involving inference providers, creating a direct signal for governance and observability tooling.",
+            "Research-input-2 shows repeated demand for agent connectivity and shared context, increasing the number of data paths that require control.",
+            "The opportunity is an inference from security incidents combined with growing agent-tool integration activity."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "enterprise subscription",
+            "usage-based API",
+            "managed private deployment"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 6
+          },
+          "risks": [
+            "Provider interfaces and policies may change frequently.",
+            "False positives in sensitive-data detection could disrupt workflows.",
+            "Enterprise sales cycles may require extensive compliance validation."
+          ],
+          "tags": [
+            "agent-security",
+            "data-governance",
+            "privacy",
+            "observability",
+            "enterprise"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Interview security and platform teams about current inference logging, redaction, retention, and incident-response gaps; then build a proxy prototype with replayable audit events."
+        },
+        {
+          "id": "agent-sandbox-control-plane",
+          "title": "Policy-Driven Ephemeral Workspaces for Software Agents",
+          "problem": "Autonomous software agents need isolated machines, credentials, filesystems, network access, and reproducible state, but teams lack a unified control plane for safely creating and destroying those environments.",
+          "solution": "A control plane that provisions short-lived workspaces, assigns least-privilege capabilities, captures artifacts, enforces network policy, and produces a complete execution record for every agent run.",
+          "technical_approach": "Use microVMs or hardened containers with snapshot-based startup, disposable credentials, capability manifests, network egress controls, filesystem overlays, artifact extraction, and run-level policy evaluation. Support local and private-cloud deployment.",
+          "stack": [
+            "Rust or Go",
+            "MicroVM or hardened container runtime",
+            "Snapshot and overlay filesystem",
+            "Network policy enforcement",
+            "Object storage",
+            "Event-driven scheduler"
+          ],
+          "evidence": [
+            "Research-input-2 highlights demand for a separate machine for every agent and for automation across software integrations.",
+            "Research-input-1 includes increasing interest in agent infrastructure, executable manipulation, and security incidents, implying a need for isolation and traceability.",
+            "The product opportunity is an inference from recurring execution, automation, and security signals."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "infrastructure subscription",
+            "per-run usage pricing",
+            "enterprise license"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 9,
+            "effort": 5
+          },
+          "risks": [
+            "Isolation failures could create severe security consequences.",
+            "Startup latency and compute cost may limit adoption.",
+            "The product may overlap with existing internal infrastructure investments."
+          ],
+          "tags": [
+            "agent-runtime",
+            "sandboxing",
+            "zero-trust",
+            "orchestration",
+            "developer-tools"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Implement a minimal local control plane that provisions disposable environments, applies capability policies, captures artifacts, and measures startup time and isolation overhead."
+        },
+        {
+          "id": "agent-evaluation-lab",
+          "title": "Reproducible Agent Evaluation and Failure Replay",
+          "problem": "Teams cannot reliably compare agent changes because real-world tasks are nondeterministic, test coverage is incomplete, and failures are difficult to reproduce across tools, models, and environments.",
+          "solution": "A testing system that records agent trajectories, generates deterministic task fixtures, replays tool calls in controlled environments, scores outcomes against explicit rubrics, and detects regressions before deployment.",
+          "technical_approach": "Combine event-sourced traces, virtualized external services, synthetic task generation, state snapshots, evaluator plugins, statistical run comparison, and human review queues. Separate environment failures from reasoning and tool-use failures.",
+          "stack": [
+            "Python or TypeScript",
+            "Event-sourced trace store",
+            "Containerized service mocks",
+            "Object storage",
+            "Metrics database",
+            "Web dashboard"
+          ],
+          "evidence": [
+            "Research-input-2 includes products focused on simulated worlds, test visibility, context sharing, and agent automation.",
+            "Research-input-1 shows interest in agents operating at low-level software boundaries, where reproducibility and regression testing are especially important.",
+            "The demand signal is an inference from repeated emphasis on agent improvement, tests, and operational automation."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "team subscription",
+            "evaluation-run usage pricing",
+            "enterprise deployment"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 6
+          },
+          "risks": [
+            "Quality scoring may be difficult for open-ended tasks.",
+            "Synthetic environments can diverge from production behavior.",
+            "Customers may lack stable task definitions and success metrics."
+          ],
+          "tags": [
+            "agent-evaluation",
+            "testing",
+            "simulation",
+            "observability",
+            "quality-assurance"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Select one narrow workflow, create a deterministic fixture suite, and validate whether replay-based regression reports change release decisions."
+        }
+      ]
+    },
+    {
+      "industry": "Cybersecurity and network operations",
+      "ideas": [
+        {
+          "id": "pcap-root-cause",
+          "title": "Explainable Network Capture Root-Cause Analyzer",
+          "problem": "Network teams receive large packet captures but spend substantial time locating the small set of protocol, latency, configuration, or security conditions that explain an incident.",
+          "solution": "A self-hosted analysis service that detects a broad library of network problems, correlates them with timing and endpoint context, and produces evidence-backed remediation reports.",
+          "technical_approach": "Build streaming packet parsers, protocol state machines, anomaly detectors, temporal correlation, rule versioning, evidence graphs, and privacy-preserving redaction. Support offline analysis and exportable incident reports.",
+          "stack": [
+            "Rust or C++ packet processing",
+            "Python rule development",
+            "Columnar analytics storage",
+            "WebAssembly detector sandbox",
+            "Containerized deployment",
+            "Structured report generation"
+          ],
+          "evidence": [
+            "Research-input-1 includes a self-hosted packet-capture analyzer with many problem detectors and visible discussion activity.",
+            "Research-input-1 also includes security vulnerability reporting, reinforcing demand for practical diagnostic and triage tooling.",
+            "The opportunity is a signal from demonstrated interest in self-hosted network analysis and security operations."
+          ],
+          "sources": [
+            "research-input-1"
+          ],
+          "business_models": [
+            "open-core subscription",
+            "enterprise support",
+            "incident-analysis usage pricing"
+          ],
+          "scores": {
+            "novelty": 7,
+            "feasibility": 8,
+            "impact": 8,
+            "effort": 6
+          },
+          "risks": [
+            "Packet formats and encrypted traffic limit visibility.",
+            "Detector accuracy must be high to earn operational trust.",
+            "Large captures create storage and processing cost."
+          ],
+          "tags": [
+            "network-security",
+            "packet-analysis",
+            "incident-response",
+            "self-hosted",
+            "diagnostics"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Package ten high-value detectors for common latency, retransmission, DNS, TLS, and routing failures, then benchmark analysis speed on representative captures."
+        }
+      ]
+    },
+    {
+      "industry": "Software engineering productivity",
+      "ideas": [
+        {
+          "id": "build-test-cost-control",
+          "title": "Build and Test Cost Control Plane",
+          "problem": "Engineering teams lack a unified view of slow or wasteful build and test execution, making it difficult to identify bottlenecks, prioritize caching, and quantify the effect of optimization work.",
+          "solution": "A telemetry and optimization layer that maps pipeline steps to source changes, detects repeated work, recommends cache boundaries, and verifies speed improvements without weakening test coverage.",
+          "technical_approach": "Collect execution traces from build workers, normalize dependency graphs, calculate critical paths, fingerprint artifacts, estimate cacheability, and run controlled before-and-after experiments. Provide policy checks for flaky or skipped tests.",
+          "stack": [
+            "Go or Rust collectors",
+            "Build graph database",
+            "Time-series metrics",
+            "Artifact metadata store",
+            "Distributed tracing",
+            "Web performance dashboard"
+          ],
+          "evidence": [
+            "Research-input-2 shows strong launch interest in faster automated build execution and visibility into tests.",
+            "Research-input-1 includes interest in command runners, language runtimes, database extensions, and developer architecture, indicating a technically sophisticated developer audience.",
+            "The commercial opportunity is an inference from repeated attention to developer throughput and execution efficiency."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "team subscription",
+            "usage-based telemetry",
+            "enterprise optimization services"
+          ],
+          "scores": {
+            "novelty": 7,
+            "feasibility": 9,
+            "impact": 8,
+            "effort": 7
+          },
+          "risks": [
+            "Instrumentation across diverse build systems can be expensive.",
+            "Caching recommendations may conflict with correctness or security requirements.",
+            "Some customers may prefer existing vendor-native observability."
+          ],
+          "tags": [
+            "build-systems",
+            "test-infrastructure",
+            "developer-productivity",
+            "performance",
+            "observability"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Instrument one representative build workflow, establish baseline critical-path metrics, and validate whether recommendations produce measurable savings."
+        },
+        {
+          "id": "scoped-code-access",
+          "title": "Path-Scoped Code Access and Agent Permission Broker",
+          "problem": "Automation tools and software agents often receive broader repository access than required, increasing the blast radius of mistakes, compromised credentials, and unintended changes.",
+          "solution": "A permission broker that grants time-limited, path-level access to code and artifacts, records every read and write, and requires policy approval for sensitive areas.",
+          "technical_approach": "Implement a virtual filesystem or repository gateway with path-aware authorization, signed capability tokens, read/write audit events, branch and commit constraints, secret scanning, and policy simulation. Integrate with existing source-control and automation workflows through standard APIs.",
+          "stack": [
+            "Go or Rust",
+            "Content-addressed storage",
+            "Signed capability tokens",
+            "Policy engine",
+            "Audit event pipeline",
+            "Repository protocol adapters"
+          ],
+          "evidence": [
+            "Research-input-2 presents path-level access for developers and agents as a visible product category with security positioning.",
+            "Research-input-1 contains multiple signals about software agents, executable manipulation, and security vulnerabilities.",
+            "The opportunity is a signal that least-privilege controls are becoming more important as automated code access expands."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "enterprise subscription",
+            "per-seat pricing",
+            "managed security deployment"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 6
+          },
+          "risks": [
+            "Deep integration with existing development workflows may be required.",
+            "Overly restrictive policies can reduce developer adoption.",
+            "Audit data may contain sensitive source metadata."
+          ],
+          "tags": [
+            "least-privilege",
+            "code-security",
+            "agent-security",
+            "access-control",
+            "developer-tools"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Prototype path-level read and write policies for a small repository and measure policy overhead, developer friction, and audit completeness."
+        }
+      ]
+    },
+    {
+      "industry": "Formal methods and research tooling",
+      "ideas": [
+        {
+          "id": "proof-maintenance-workbench",
+          "title": "Formal Proof Maintenance and Verification Workbench",
+          "problem": "Large formal proofs are difficult to review, reproduce, maintain, and integrate into ordinary engineering workflows, especially when dependencies, tactics, or foundational assumptions change.",
+          "solution": "A collaboration and continuous-verification system that tracks proof dependencies, runs incremental checks, explains failed obligations, compares proof changes, and produces auditable verification bundles.",
+          "technical_approach": "Parse proof projects into dependency graphs, cache verified intermediate artifacts, isolate compiler and library versions, expose structured failure diagnostics, and provide reviewable proof diffs. Support reproducible builds and signed verification manifests.",
+          "stack": [
+            "Functional programming language tooling",
+            "Dependency graph store",
+            "Content-addressed artifact cache",
+            "Reproducible build system",
+            "Continuous integration workers",
+            "Web review interface"
+          ],
+          "evidence": [
+            "Research-input-1 shows exceptionally high discussion activity around formal verification of a major mathematical result and separately references verification files.",
+            "Research-input-1 also shows interest in language-level testing and systems programming, suggesting an audience for rigorous tooling.",
+            "The business opportunity is an inference from unusually strong attention to proof reproducibility and verification artifacts."
+          ],
+          "sources": [
+            "research-input-1"
+          ],
+          "business_models": [
+            "institutional subscription",
+            "enterprise verification license",
+            "open-core support"
+          ],
+          "scores": {
+            "novelty": 9,
+            "feasibility": 6,
+            "impact": 8,
+            "effort": 4
+          },
+          "risks": [
+            "The addressable market is specialized.",
+            "Proof-system compatibility may require substantial maintenance.",
+            "Commercial buyers may expect open standards and transparent implementations."
+          ],
+          "tags": [
+            "formal-verification",
+            "proof-engineering",
+            "reproducibility",
+            "research-tools",
+            "developer-tools"
+          ],
+          "status": "new",
+          "confidence": "medium",
+          "next_action": "Build an incremental dependency graph and reproducible verification cache for one proof project, then test whether review and rebuild times improve."
+        }
+      ]
+    }
+  ],
+  "ideas_by_business_model": [
+    {
+      "business_model": "enterprise subscription",
+      "ideas": [
+        {
+          "id": "agent-data-boundary",
+          "title": "Inference Data Boundary and Audit Gateway"
+        },
+        {
+          "id": "agent-sandbox-control-plane",
+          "title": "Policy-Driven Ephemeral Workspaces for Software Agents"
+        },
+        {
+          "id": "agent-evaluation-lab",
+          "title": "Reproducible Agent Evaluation and Failure Replay"
+        },
+        {
+          "id": "scoped-code-access",
+          "title": "Path-Scoped Code Access and Agent Permission Broker"
+        }
+      ]
+    },
+    {
+      "business_model": "usage-based pricing",
+      "ideas": [
+        {
+          "id": "agent-data-boundary",
+          "title": "Inference Data Boundary and Audit Gateway"
+        },
+        {
+          "id": "agent-evaluation-lab",
+          "title": "Reproducible Agent Evaluation and Failure Replay"
+        },
+        {
+          "id": "pcap-root-cause",
+          "title": "Explainable Network Capture Root-Cause Analyzer"
+        },
+        {
+          "id": "build-test-cost-control",
+          "title": "Build and Test Cost Control Plane"
+        }
+      ]
+    },
+    {
+      "business_model": "open-core subscription",
+      "ideas": [
+        {
+          "id": "pcap-root-cause",
+          "title": "Explainable Network Capture Root-Cause Analyzer"
+        },
+        {
+          "id": "proof-maintenance-workbench",
+          "title": "Formal Proof Maintenance and Verification Workbench"
+        }
+      ]
+    },
+    {
+      "business_model": "enterprise license",
+      "ideas": [
+        {
+          "id": "agent-sandbox-control-plane",
+          "title": "Policy-Driven Ephemeral Workspaces for Software Agents"
+        },
+        {
+          "id": "proof-maintenance-workbench",
+          "title": "Formal Proof Maintenance and Verification Workbench"
+        }
+      ]
+    },
+    {
+      "business_model": "managed private deployment",
+      "ideas": [
+        {
+          "id": "agent-data-boundary",
+          "title": "Inference Data Boundary and Audit Gateway"
+        },
+        {
+          "id": "agent-sandbox-control-plane",
+          "title": "Policy-Driven Ephemeral Workspaces for Software Agents"
+        }
+      ]
+    }
+  ],
+  "recommended_next_queries": [
+    "Which teams currently log, redact, route, and retain inference requests, and what audit evidence is missing during incidents?",
+    "What isolation guarantees, startup times, credential controls, and network policies are required for autonomous software execution?",
+    "Which agent tasks have stable success criteria and can support deterministic replay and regression testing?",
+    "How do organizations currently enforce path-level permissions for automated code changes and repository reads?",
+    "Which packet-capture diagnoses consume the most analyst time, and what evidence is required before remediation?",
+    "What percentage of build and test time is attributable to repeated work, cache misses, flaky tests, or critical-path bottlenecks?",
+    "Which formal verification workflows suffer most from slow rebuilds, dependency breakage, or poor reviewability?",
+    "What privacy and deployment constraints determine whether developer infrastructure must run locally or in a private environment?"
+  ],
+  "blocked_sources": []
+}
