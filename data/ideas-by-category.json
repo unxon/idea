@@ -1,423 +1,377 @@
 {
-  "run_id": "run-1795059006132",
-  "timestamp": "2026-11-19T03:30:06.132Z",
+  "run_id": "run-1795318207286",
+  "timestamp": "2026-11-22T03:30:07.286Z",
   "counts": {
-    "industries": 5,
-    "business_models": 7,
-    "total_ideas": 8
+    "industries": 4,
+    "business_models": 5,
+    "total_ideas": 7
   },
   "ideas_by_industry": [
     {
-      "industry": "Cybersecurity",
+      "industry": "Developer infrastructure",
       "ideas": [
         {
-          "id": "runtime-vulnerability-remediator",
-          "title": "Runtime Vulnerability Remediation Control Plane",
-          "problem": "Security teams receive urgent vulnerability disclosures but lack a reliable way to determine which deployed services are reachable, affected, exploitable, and safely remediated across heterogeneous environments.",
-          "solution": "Continuously map vulnerable components to running workloads, reproduce exploit conditions in isolated environments, prioritize exposed assets, and coordinate tested mitigations with auditable evidence.",
-          "technical_approach": "Build an asset and dependency graph from images, packages, runtime telemetry, configuration, and network exposure. Use isolated replay environments for exploit validation, policy-based risk scoring, canary patches, and signed remediation records.",
+          "id": "agent-data-boundary",
+          "title": "Inference Data Boundary and Audit Gateway",
+          "problem": "Organizations cannot reliably determine what sensitive data is sent to external inference services, how it is transformed, or whether provider-side incidents affected their workloads.",
+          "solution": "A deployment gateway that classifies prompts and outputs, applies redaction and routing policies, records tamper-evident audit trails, and provides incident replay for every inference request.",
+          "technical_approach": "Deploy as an API-compatible proxy with configurable data-loss-prevention rules, field-level tokenization, provider routing, encrypted event storage, policy simulation, and automated incident timelines. Add workload-specific retention and access controls.",
           "stack": [
-            "Go",
-            "Rust",
-            "Kubernetes",
+            "Go or Rust",
+            "HTTP and gRPC proxying",
+            "PostgreSQL-compatible audit store",
             "OpenTelemetry",
-            "PostgreSQL",
-            "eBPF",
-            "WASM sandboxes"
+            "Container orchestration",
+            "Policy-as-code engine"
           ],
           "evidence": [
-            "A remote unauthenticated code-execution disclosure received very high engagement, signaling persistent urgency around externally reachable vulnerabilities.",
-            "A separate language-runtime vulnerability disclosure also attracted substantial attention, indicating demand across both infrastructure and application ecosystems.",
-            "The opportunity is a signal that teams need remediation verification, not merely vulnerability notification."
+            "Research-input-1 reports a data-processing incident involving inference providers, creating a direct signal for governance and observability tooling.",
+            "Research-input-2 shows repeated demand for agent connectivity and shared context, increasing the number of data paths that require control.",
+            "The opportunity is an inference from security incidents combined with growing agent-tool integration activity."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "enterprise subscription",
+            "usage-based API",
+            "managed private deployment"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 6
+          },
+          "risks": [
+            "Provider interfaces and policies may change frequently.",
+            "False positives in sensitive-data detection could disrupt workflows.",
+            "Enterprise sales cycles may require extensive compliance validation."
+          ],
+          "tags": [
+            "agent-security",
+            "data-governance",
+            "privacy",
+            "observability",
+            "enterprise"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Interview security and platform teams about current inference logging, redaction, retention, and incident-response gaps; then build a proxy prototype with replayable audit events."
+        },
+        {
+          "id": "agent-sandbox-control-plane",
+          "title": "Policy-Driven Ephemeral Workspaces for Software Agents",
+          "problem": "Autonomous software agents need isolated machines, credentials, filesystems, network access, and reproducible state, but teams lack a unified control plane for safely creating and destroying those environments.",
+          "solution": "A control plane that provisions short-lived workspaces, assigns least-privilege capabilities, captures artifacts, enforces network policy, and produces a complete execution record for every agent run.",
+          "technical_approach": "Use microVMs or hardened containers with snapshot-based startup, disposable credentials, capability manifests, network egress controls, filesystem overlays, artifact extraction, and run-level policy evaluation. Support local and private-cloud deployment.",
+          "stack": [
+            "Rust or Go",
+            "MicroVM or hardened container runtime",
+            "Snapshot and overlay filesystem",
+            "Network policy enforcement",
+            "Object storage",
+            "Event-driven scheduler"
+          ],
+          "evidence": [
+            "Research-input-2 highlights demand for a separate machine for every agent and for automation across software integrations.",
+            "Research-input-1 includes increasing interest in agent infrastructure, executable manipulation, and security incidents, implying a need for isolation and traceability.",
+            "The product opportunity is an inference from recurring execution, automation, and security signals."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "infrastructure subscription",
+            "per-run usage pricing",
+            "enterprise license"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 9,
+            "effort": 5
+          },
+          "risks": [
+            "Isolation failures could create severe security consequences.",
+            "Startup latency and compute cost may limit adoption.",
+            "The product may overlap with existing internal infrastructure investments."
+          ],
+          "tags": [
+            "agent-runtime",
+            "sandboxing",
+            "zero-trust",
+            "orchestration",
+            "developer-tools"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Implement a minimal local control plane that provisions disposable environments, applies capability policies, captures artifacts, and measures startup time and isolation overhead."
+        },
+        {
+          "id": "agent-evaluation-lab",
+          "title": "Reproducible Agent Evaluation and Failure Replay",
+          "problem": "Teams cannot reliably compare agent changes because real-world tasks are nondeterministic, test coverage is incomplete, and failures are difficult to reproduce across tools, models, and environments.",
+          "solution": "A testing system that records agent trajectories, generates deterministic task fixtures, replays tool calls in controlled environments, scores outcomes against explicit rubrics, and detects regressions before deployment.",
+          "technical_approach": "Combine event-sourced traces, virtualized external services, synthetic task generation, state snapshots, evaluator plugins, statistical run comparison, and human review queues. Separate environment failures from reasoning and tool-use failures.",
+          "stack": [
+            "Python or TypeScript",
+            "Event-sourced trace store",
+            "Containerized service mocks",
+            "Object storage",
+            "Metrics database",
+            "Web dashboard"
+          ],
+          "evidence": [
+            "Research-input-2 includes products focused on simulated worlds, test visibility, context sharing, and agent automation.",
+            "Research-input-1 shows interest in agents operating at low-level software boundaries, where reproducibility and regression testing are especially important.",
+            "The demand signal is an inference from repeated emphasis on agent improvement, tests, and operational automation."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "team subscription",
+            "evaluation-run usage pricing",
+            "enterprise deployment"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 6
+          },
+          "risks": [
+            "Quality scoring may be difficult for open-ended tasks.",
+            "Synthetic environments can diverge from production behavior.",
+            "Customers may lack stable task definitions and success metrics."
+          ],
+          "tags": [
+            "agent-evaluation",
+            "testing",
+            "simulation",
+            "observability",
+            "quality-assurance"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Select one narrow workflow, create a deterministic fixture suite, and validate whether replay-based regression reports change release decisions."
+        }
+      ]
+    },
+    {
+      "industry": "Cybersecurity and network operations",
+      "ideas": [
+        {
+          "id": "pcap-root-cause",
+          "title": "Explainable Network Capture Root-Cause Analyzer",
+          "problem": "Network teams receive large packet captures but spend substantial time locating the small set of protocol, latency, configuration, or security conditions that explain an incident.",
+          "solution": "A self-hosted analysis service that detects a broad library of network problems, correlates them with timing and endpoint context, and produces evidence-backed remediation reports.",
+          "technical_approach": "Build streaming packet parsers, protocol state machines, anomaly detectors, temporal correlation, rule versioning, evidence graphs, and privacy-preserving redaction. Support offline analysis and exportable incident reports.",
+          "stack": [
+            "Rust or C++ packet processing",
+            "Python rule development",
+            "Columnar analytics storage",
+            "WebAssembly detector sandbox",
+            "Containerized deployment",
+            "Structured report generation"
+          ],
+          "evidence": [
+            "Research-input-1 includes a self-hosted packet-capture analyzer with many problem detectors and visible discussion activity.",
+            "Research-input-1 also includes security vulnerability reporting, reinforcing demand for practical diagnostic and triage tooling.",
+            "The opportunity is a signal from demonstrated interest in self-hosted network analysis and security operations."
           ],
           "sources": [
             "research-input-1"
           ],
           "business_models": [
-            "enterprise subscription",
-            "managed security service",
-            "usage-based scanning"
+            "open-core subscription",
+            "enterprise support",
+            "incident-analysis usage pricing"
           ],
           "scores": {
-            "novelty": 8,
-            "feasibility": 7,
-            "impact": 10,
-            "effort": 8
+            "novelty": 7,
+            "feasibility": 8,
+            "impact": 8,
+            "effort": 6
           },
           "risks": [
-            "Exploit reproduction may create operational or legal exposure.",
-            "Accurate asset and dependency discovery is difficult in incomplete environments.",
-            "Patch automation requires strong rollback and approval controls."
+            "Packet formats and encrypted traffic limit visibility.",
+            "Detector accuracy must be high to earn operational trust.",
+            "Large captures create storage and processing cost."
           ],
           "tags": [
-            "vulnerability-management",
-            "runtime-security",
-            "exploit-validation",
-            "remediation"
+            "network-security",
+            "packet-analysis",
+            "incident-response",
+            "self-hosted",
+            "diagnostics"
           ],
           "status": "new",
           "confidence": "high",
-          "next_action": "Interview security and platform teams about their response workflow for externally reachable critical vulnerabilities and prototype dependency-to-runtime mapping."
+          "next_action": "Package ten high-value detectors for common latency, retransmission, DNS, TLS, and routing failures, then benchmark analysis speed on representative captures."
         }
       ]
     },
     {
-      "industry": "Developer Tools",
+      "industry": "Software engineering productivity",
       "ideas": [
         {
-          "id": "failure-replay-lab",
-          "title": "Deterministic Build Failure Replay Lab",
-          "problem": "When an automated build or deployment fails, developers often lack the exact environment, artifacts, credentials model, and state needed to reproduce the failure locally.",
-          "solution": "Capture failure provenance and generate a disposable, privacy-preserving replay environment that reconstructs the relevant workflow step, dependencies, logs, and inputs.",
-          "technical_approach": "Collect workflow manifests, container layers, dependency locks, environment schemas, test fixtures, and event timelines. Use content-addressed caching, local virtualization, secret redaction, and differential replay to identify the smallest failing condition.",
+          "id": "build-test-cost-control",
+          "title": "Build and Test Cost Control Plane",
+          "problem": "Engineering teams lack a unified view of slow or wasteful build and test execution, making it difficult to identify bottlenecks, prioritize caching, and quantify the effect of optimization work.",
+          "solution": "A telemetry and optimization layer that maps pipeline steps to source changes, detects repeated work, recommends cache boundaries, and verifies speed improvements without weakening test coverage.",
+          "technical_approach": "Collect execution traces from build workers, normalize dependency graphs, calculate critical paths, fingerprint artifacts, estimate cacheability, and run controlled before-and-after experiments. Provide policy checks for flaky or skipped tests.",
           "stack": [
-            "Go",
-            "OCI containers",
-            "Firecracker",
-            "Nix",
-            "OpenTelemetry",
-            "SQLite",
-            "object storage"
+            "Go or Rust collectors",
+            "Build graph database",
+            "Time-series metrics",
+            "Artifact metadata store",
+            "Distributed tracing",
+            "Web performance dashboard"
           ],
           "evidence": [
-            "A tool focused on reproducing failed automated runs locally appeared among highly engaged developer projects, signaling a concrete pain point.",
-            "Multiple products in the inputs address broken builds or coding-agent verification, suggesting that failure recovery is becoming a distinct workflow category.",
-            "The inference is that reproducibility remains valuable even as code generation becomes more automated."
+            "Research-input-2 shows strong launch interest in faster automated build execution and visibility into tests.",
+            "Research-input-1 includes interest in command runners, language runtimes, database extensions, and developer architecture, indicating a technically sophisticated developer audience.",
+            "The commercial opportunity is an inference from repeated attention to developer throughput and execution efficiency."
           ],
           "sources": [
             "research-input-1",
             "research-input-2"
           ],
           "business_models": [
-            "developer subscription",
-            "team workspace subscription",
-            "enterprise self-hosted license"
+            "team subscription",
+            "usage-based telemetry",
+            "enterprise optimization services"
           ],
           "scores": {
-            "novelty": 8,
-            "feasibility": 8,
-            "impact": 9,
+            "novelty": 7,
+            "feasibility": 9,
+            "impact": 8,
             "effort": 7
           },
           "risks": [
-            "Some failures depend on unavailable external services or nondeterministic timing.",
-            "Environment capture can expose secrets or proprietary data.",
-            "Runtime and storage costs may grow quickly for large repositories."
+            "Instrumentation across diverse build systems can be expensive.",
+            "Caching recommendations may conflict with correctness or security requirements.",
+            "Some customers may prefer existing vendor-native observability."
           ],
           "tags": [
-            "build-reliability",
-            "debugging",
-            "reproducibility",
-            "developer-productivity"
-          ],
-          "status": "new",
-          "confidence": "high",
-          "next_action": "Build a proof of concept that converts one failed workflow artifact into a local containerized replay with automatic secret redaction."
-        },
-        {
-          "id": "agent-change-verifier",
-          "title": "Change Verification Fabric for Coding Agents",
-          "problem": "Automated coding systems can produce plausible changes that pass narrow tests while breaking visual behavior, accessibility, performance, or undocumented product invariants.",
-          "solution": "Create a verification layer that evaluates generated changes against behavioral, visual, accessibility, security, and regression policies before merge or deployment.",
-          "technical_approach": "Combine browser and API replay, screenshot and animation diffs, accessibility audits, contract tests, trace comparison, risk-based test selection, and human approval queues. Store evidence as immutable change attestations.",
-          "stack": [
-            "TypeScript",
-            "Playwright",
-            "OpenTelemetry",
-            "PostgreSQL",
-            "WebAssembly",
-            "containerized runners"
-          ],
-          "evidence": [
-            "The inputs show several products focused on visual testing, animation regression, self-healing quality, and coding-agent self-checks.",
-            "The clustering of these products signals that generated code increases demand for independent verification rather than only generation.",
-            "A broader inference is that quality assurance can become a policy and evidence layer across multiple development agents."
-          ],
-          "sources": [
-            "research-input-2"
-          ],
-          "business_models": [
-            "usage-based testing",
-            "per-seat subscription",
-            "enterprise quality platform"
-          ],
-          "scores": {
-            "novelty": 8,
-            "feasibility": 8,
-            "impact": 9,
-            "effort": 8
-          },
-          "risks": [
-            "Visual differences can produce noisy alerts.",
-            "Browser and device coverage can become expensive.",
-            "Teams may resist additional merge gates without strong precision."
-          ],
-          "tags": [
-            "agent-verification",
-            "visual-regression",
-            "accessibility",
-            "software-quality"
-          ],
-          "status": "new",
-          "confidence": "high",
-          "next_action": "Validate a narrow wedge around generated front-end changes using screenshot, accessibility, and interaction replay checks."
-        },
-        {
-          "id": "model-route-evaluator",
-          "title": "Model Route and Quality Evaluation Gateway",
-          "problem": "Teams adopting multiple language and multimodal models struggle to balance cost, latency, reliability, privacy, and task quality across changing workloads.",
-          "solution": "Provide an evaluation-driven gateway that routes each request to an appropriate model or local execution path and continuously measures quality, cost, latency, failure modes, and drift.",
-          "technical_approach": "Use typed task contracts, offline benchmark suites, shadow traffic, adaptive routing, redaction, budget policies, fallback chains, and outcome-based evaluation. Keep prompts, outputs, and metrics versioned with configurable retention.",
-          "stack": [
-            "Rust",
-            "Python",
-            "OpenTelemetry",
-            "ClickHouse",
-            "Redis",
-            "Kubernetes",
-            "evaluation workers"
-          ],
-          "evidence": [
-            "The inputs feature several newly released models emphasizing capability, long-running work, speed, and low price-performance.",
-            "High engagement with model announcements indicates strong market attention, while multiple products expose model-driven workflows.",
-            "The opportunity is an inference that model proliferation creates operational complexity requiring neutral measurement and routing."
-          ],
-          "sources": [
-            "research-input-1",
-            "research-input-2"
-          ],
-          "business_models": [
-            "usage-based API",
-            "enterprise platform subscription",
-            "private deployment license"
-          ],
-          "scores": {
-            "novelty": 8,
-            "feasibility": 8,
-            "impact": 9,
-            "effort": 7
-          },
-          "risks": [
-            "Quality metrics may not correlate with business outcomes.",
-            "Routing decisions can create privacy and data residency concerns.",
-            "Model providers and interfaces change rapidly."
-          ],
-          "tags": [
-            "model-routing",
-            "evaluation",
-            "cost-control",
+            "build-systems",
+            "test-infrastructure",
+            "developer-productivity",
+            "performance",
             "observability"
           ],
           "status": "new",
           "confidence": "high",
-          "next_action": "Develop a benchmark harness for three task classes with configurable quality, latency, and cost policies, then test routing against recorded synthetic workloads."
-        }
-      ]
-    },
-    {
-      "industry": "Enterprise Operations",
-      "ideas": [
-        {
-          "id": "audit-evidence-workbench",
-          "title": "Evidence-First Audit Investigation Workbench",
-          "problem": "Audit teams spend significant time collecting records, asking repetitive questions, reconciling conflicting evidence, and documenting why a conclusion is justified.",
-          "solution": "Provide a controlled investigation workspace that proposes high-value questions, links each answer to source evidence, identifies contradictions, and produces reviewable workpapers without making unsupervised decisions.",
-          "technical_approach": "Use a permissioned evidence graph, document and transaction connectors, structured question planning, provenance-preserving retrieval, contradiction detection, confidence calibration, and mandatory human sign-off for conclusions.",
-          "stack": [
-            "Python",
-            "PostgreSQL",
-            "OpenSearch",
-            "object storage",
-            "policy engine",
-            "event-sourced workflow"
-          ],
-          "evidence": [
-            "The inputs describe agent-assisted audit work that generated stronger questions than conventional workflows, signaling potential for investigation support.",
-            "The framing emphasizes questions and evidence rather than autonomous conclusions, which is appropriate for regulated operations.",
-            "The inference is that audit productivity gains are more defensible when every output remains traceable to underlying records."
-          ],
-          "sources": [
-            "research-input-1"
-          ],
-          "business_models": [
-            "enterprise subscription",
-            "professional services implementation",
-            "regulated-industry private deployment"
-          ],
-          "scores": {
-            "novelty": 8,
-            "feasibility": 7,
-            "impact": 9,
-            "effort": 8
-          },
-          "risks": [
-            "Incorrect evidence linkage could undermine trust.",
-            "Sensitive financial and personal data require strict controls.",
-            "Audit standards and liability expectations vary by jurisdiction."
-          ],
-          "tags": [
-            "audit-technology",
-            "evidence-management",
-            "compliance",
-            "human-in-the-loop"
-          ],
-          "status": "new",
-          "confidence": "medium",
-          "next_action": "Prototype an evidence graph and question-ranking workflow using synthetic procurement or access-review records."
+          "next_action": "Instrument one representative build workflow, establish baseline critical-path metrics, and validate whether recommendations produce measurable savings."
         },
         {
-          "id": "agent-data-access-layer",
-          "title": "Governed Data Access Layer for Operational Agents",
-          "problem": "Operational agents need current business data and actions, but direct access to fragmented systems creates inconsistent schemas, excessive permissions, stale results, and difficult auditability.",
-          "solution": "Offer a governed data and action layer that exposes typed capabilities, validates requests, enforces least privilege, and records complete execution provenance.",
-          "technical_approach": "Create connector adapters, canonical schemas, capability manifests, policy evaluation, row- and field-level authorization, caching with freshness guarantees, dry-run execution, and append-only audit logs.",
+          "id": "scoped-code-access",
+          "title": "Path-Scoped Code Access and Agent Permission Broker",
+          "problem": "Automation tools and software agents often receive broader repository access than required, increasing the blast radius of mistakes, compromised credentials, and unintended changes.",
+          "solution": "A permission broker that grants time-limited, path-level access to code and artifacts, records every read and write, and requires policy approval for sensitive areas.",
+          "technical_approach": "Implement a virtual filesystem or repository gateway with path-aware authorization, signed capability tokens, read/write audit events, branch and commit constraints, secret scanning, and policy simulation. Integrate with existing source-control and automation workflows through standard APIs.",
           "stack": [
-            "TypeScript",
-            "PostgreSQL",
-            "GraphQL",
-            "Apache Arrow",
-            "OPA-compatible policy engine",
-            "Kafka"
+            "Go or Rust",
+            "Content-addressed storage",
+            "Signed capability tokens",
+            "Policy engine",
+            "Audit event pipeline",
+            "Repository protocol adapters"
           ],
           "evidence": [
-            "The inputs show multiple products positioning structured data access and agent connectivity as a distinct category.",
-            "Agent workspaces, workflow builders, and operational assistants all imply a need for dependable access to enterprise context.",
-            "The inference is that governance and semantic consistency are the durable layer beneath rapidly changing agent interfaces."
+            "Research-input-2 presents path-level access for developers and agents as a visible product category with security positioning.",
+            "Research-input-1 contains multiple signals about software agents, executable manipulation, and security vulnerabilities.",
+            "The opportunity is a signal that least-privilege controls are becoming more important as automated code access expands."
           ],
           "sources": [
+            "research-input-1",
             "research-input-2"
           ],
           "business_models": [
-            "platform subscription",
-            "usage-based connector fees",
-            "enterprise integration services"
+            "enterprise subscription",
+            "per-seat pricing",
+            "managed security deployment"
           ],
           "scores": {
             "novelty": 8,
-            "feasibility": 7,
-            "impact": 10,
-            "effort": 8
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 6
           },
           "risks": [
-            "Connector maintenance becomes a major operating burden.",
-            "Permissions must match source-system semantics precisely.",
-            "Customers may prefer internal development for high-value data domains."
+            "Deep integration with existing development workflows may be required.",
+            "Overly restrictive policies can reduce developer adoption.",
+            "Audit data may contain sensitive source metadata."
           ],
           "tags": [
-            "data-governance",
-            "agent-infrastructure",
-            "connectors",
-            "least-privilege"
+            "least-privilege",
+            "code-security",
+            "agent-security",
+            "access-control",
+            "developer-tools"
           ],
           "status": "new",
           "confidence": "high",
-          "next_action": "Select one operational domain, define five typed capabilities, and demonstrate policy enforcement plus end-to-end provenance."
+          "next_action": "Prototype path-level read and write policies for a small repository and measure policy overhead, developer friction, and audit completeness."
         }
       ]
     },
     {
-      "industry": "Infrastructure and Embedded Systems",
+      "industry": "Formal methods and research tooling",
       "ideas": [
         {
-          "id": "offline-device-bridge",
-          "title": "Offline-First Compatibility Bridge for Cloud-Dependent Devices",
-          "problem": "Connected consumer and industrial devices can become unreliable or unusable when cloud services, network access, vendor endpoints, or authentication dependencies fail.",
-          "solution": "Provide a local compatibility layer that preserves essential device control, state synchronization, diagnostics, and safe recovery while offline or during vendor-service disruption.",
-          "technical_approach": "Implement protocol adapters, local state machines, encrypted credential storage, capability discovery, conflict-free synchronization, firmware-aware safety rules, and a test harness for protocol behavior.",
+          "id": "proof-maintenance-workbench",
+          "title": "Formal Proof Maintenance and Verification Workbench",
+          "problem": "Large formal proofs are difficult to review, reproduce, maintain, and integrate into ordinary engineering workflows, especially when dependencies, tactics, or foundational assumptions change.",
+          "solution": "A collaboration and continuous-verification system that tracks proof dependencies, runs incremental checks, explains failed obligations, compares proof changes, and produces auditable verification bundles.",
+          "technical_approach": "Parse proof projects into dependency graphs, cache verified intermediate artifacts, isolate compiler and library versions, expose structured failure diagnostics, and provide reviewable proof diffs. Support reproducible builds and signed verification manifests.",
           "stack": [
-            "Rust",
-            "SQLite",
-            "MQTT",
-            "mDNS",
-            "WebAssembly",
-            "embedded Linux"
+            "Functional programming language tooling",
+            "Dependency graph store",
+            "Content-addressed artifact cache",
+            "Reproducible build system",
+            "Continuous integration workers",
+            "Web review interface"
           ],
           "evidence": [
-            "The inputs include a detailed effort to extract a key and keep a connected household device operating offline, signaling frustration with cloud dependency.",
-            "The example demonstrates that users may resort to low-level reverse engineering when essential local behavior is unavailable.",
-            "The inference is that offline continuity and interoperability can be valuable for devices with recurring connectivity or vendor-service failures."
+            "Research-input-1 shows exceptionally high discussion activity around formal verification of a major mathematical result and separately references verification files.",
+            "Research-input-1 also shows interest in language-level testing and systems programming, suggesting an audience for rigorous tooling.",
+            "The business opportunity is an inference from unusually strong attention to proof reproducibility and verification artifacts."
           ],
           "sources": [
             "research-input-1"
           ],
           "business_models": [
-            "device-management subscription",
-            "hardware gateway sales",
-            "enterprise fleet license"
+            "institutional subscription",
+            "enterprise verification license",
+            "open-core support"
           ],
           "scores": {
             "novelty": 9,
             "feasibility": 6,
             "impact": 8,
-            "effort": 9
+            "effort": 4
           },
           "risks": [
-            "Reverse engineering may conflict with contracts or regulations.",
-            "Safety-critical actions require conservative fail-safe behavior.",
-            "Vendor protocol changes can break compatibility."
+            "The addressable market is specialized.",
+            "Proof-system compatibility may require substantial maintenance.",
+            "Commercial buyers may expect open standards and transparent implementations."
           ],
           "tags": [
-            "offline-first",
-            "device-interoperability",
-            "edge-computing",
-            "local-control"
+            "formal-verification",
+            "proof-engineering",
+            "reproducibility",
+            "research-tools",
+            "developer-tools"
           ],
           "status": "new",
           "confidence": "medium",
-          "next_action": "Choose a non-safety-critical device category and map the minimum local control surface needed for offline continuity."
-        }
-      ]
-    },
-    {
-      "industry": "Media and Simulation",
-      "ideas": [
-        {
-          "id": "interactive-simulation-runtime",
-          "title": "Browser-Native Legacy Software Simulation Runtime",
-          "problem": "Legacy interactive software often depends on platform-specific runtimes, installation steps, and unavailable hardware, limiting preservation, education, testing, and collaborative access.",
-          "solution": "Provide a secure browser runtime that packages legacy applications with deterministic input, network isolation, save-state management, and collaborative replay.",
-          "technical_approach": "Use WebAssembly or browser virtualization, filesystem snapshots, input event recording, asset deduplication, sandboxed networking, deterministic timing controls, and rights-aware distribution workflows.",
-          "stack": [
-            "WebAssembly",
-            "Rust",
-            "WebGPU",
-            "IndexedDB",
-            "content-addressed storage",
-            "WebRTC"
-          ],
-          "evidence": [
-            "The inputs include a browser-based revival of a legacy interactive application, signaling interest in accessible software preservation and low-friction execution.",
-            "A separate project visualizes a complex technical system down to component level, indicating appetite for interactive technical exploration.",
-            "The opportunity is an inference that browser-native simulation can serve preservation, training, and education beyond entertainment."
-          ],
-          "sources": [
-            "research-input-1"
-          ],
-          "business_models": [
-            "institutional licensing",
-            "education subscription",
-            "developer SDK licensing"
-          ],
-          "scores": {
-            "novelty": 8,
-            "feasibility": 6,
-            "impact": 7,
-            "effort": 9
-          },
-          "risks": [
-            "Rights and redistribution constraints may limit available content.",
-            "High-fidelity emulation can require substantial engineering.",
-            "Browser security and performance vary across devices."
-          ],
-          "tags": [
-            "simulation",
-            "software-preservation",
-            "webassembly",
-            "interactive-learning"
-          ],
-          "status": "new",
-          "confidence": "medium",
-          "next_action": "Create a small runtime for one legally distributable legacy application with save states and deterministic replay."
+          "next_action": "Build an incremental dependency graph and reproducible verification cache for one proof project, then test whether review and rebuild times improve."
         }
       ]
     }
@@ -427,94 +381,80 @@
       "business_model": "enterprise subscription",
       "ideas": [
         {
-          "id": "runtime-vulnerability-remediator",
-          "title": "Runtime Vulnerability Remediation Control Plane"
+          "id": "agent-data-boundary",
+          "title": "Inference Data Boundary and Audit Gateway"
         },
         {
-          "id": "audit-evidence-workbench",
-          "title": "Evidence-First Audit Investigation Workbench"
+          "id": "agent-sandbox-control-plane",
+          "title": "Policy-Driven Ephemeral Workspaces for Software Agents"
         },
         {
-          "id": "agent-data-access-layer",
-          "title": "Governed Data Access Layer for Operational Agents"
+          "id": "agent-evaluation-lab",
+          "title": "Reproducible Agent Evaluation and Failure Replay"
+        },
+        {
+          "id": "scoped-code-access",
+          "title": "Path-Scoped Code Access and Agent Permission Broker"
         }
       ]
     },
     {
-      "business_model": "usage-based infrastructure",
+      "business_model": "usage-based pricing",
       "ideas": [
         {
-          "id": "model-route-evaluator",
-          "title": "Model Route and Quality Evaluation Gateway"
+          "id": "agent-data-boundary",
+          "title": "Inference Data Boundary and Audit Gateway"
         },
         {
-          "id": "agent-change-verifier",
-          "title": "Change Verification Fabric for Coding Agents"
+          "id": "agent-evaluation-lab",
+          "title": "Reproducible Agent Evaluation and Failure Replay"
         },
         {
-          "id": "failure-replay-lab",
-          "title": "Deterministic Build Failure Replay Lab"
+          "id": "pcap-root-cause",
+          "title": "Explainable Network Capture Root-Cause Analyzer"
+        },
+        {
+          "id": "build-test-cost-control",
+          "title": "Build and Test Cost Control Plane"
         }
       ]
     },
     {
-      "business_model": "enterprise private deployment",
+      "business_model": "open-core subscription",
       "ideas": [
         {
-          "id": "model-route-evaluator",
-          "title": "Model Route and Quality Evaluation Gateway"
+          "id": "pcap-root-cause",
+          "title": "Explainable Network Capture Root-Cause Analyzer"
         },
         {
-          "id": "audit-evidence-workbench",
-          "title": "Evidence-First Audit Investigation Workbench"
-        },
-        {
-          "id": "runtime-vulnerability-remediator",
-          "title": "Runtime Vulnerability Remediation Control Plane"
+          "id": "proof-maintenance-workbench",
+          "title": "Formal Proof Maintenance and Verification Workbench"
         }
       ]
     },
     {
-      "business_model": "developer subscription",
+      "business_model": "enterprise license",
       "ideas": [
         {
-          "id": "failure-replay-lab",
-          "title": "Deterministic Build Failure Replay Lab"
+          "id": "agent-sandbox-control-plane",
+          "title": "Policy-Driven Ephemeral Workspaces for Software Agents"
         },
         {
-          "id": "agent-change-verifier",
-          "title": "Change Verification Fabric for Coding Agents"
+          "id": "proof-maintenance-workbench",
+          "title": "Formal Proof Maintenance and Verification Workbench"
         }
       ]
     },
     {
-      "business_model": "managed service",
+      "business_model": "managed private deployment",
       "ideas": [
         {
-          "id": "runtime-vulnerability-remediator",
-          "title": "Runtime Vulnerability Remediation Control Plane"
+          "id": "agent-data-boundary",
+          "title": "Inference Data Boundary and Audit Gateway"
         },
         {
-          "id": "agent-data-access-layer",
-          "title": "Governed Data Access Layer for Operational Agents"
-        }
-      ]
-    },
-    {
-      "business_model": "hardware and gateway sales",
-      "ideas": [
-        {
-          "id": "offline-device-bridge",
-          "title": "Offline-First Compatibility Bridge for Cloud-Dependent Devices"
-        }
-      ]
-    },
-    {
-      "business_model": "institutional licensing",
-      "ideas": [
-        {
-          "id": "interactive-simulation-runtime",
-          "title": "Browser-Native Legacy Software Simulation Runtime"
+          "id": "agent-sandbox-control-plane",
+          "title": "Policy-Driven Ephemeral Workspaces for Software Agents"
         }
       ]
     }
