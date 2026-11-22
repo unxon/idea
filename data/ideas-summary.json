@@ -1,10 +1,29 @@
 {
-  "run_id": "run-1795296606746",
-  "timestamp": "2026-11-21T21:30:06.746Z",
-  "research_summary": "The research input highlights recurring opportunities in specialized AI software: audio understanding and generation, agentic CAD workflows, scientific analysis and discovery, frontier-model data operations, benefits-payment infrastructure, AI-assisted presentation design, and voice automation. The strongest product pattern is domain-specific software that combines AI with structured workflows, proprietary data, and operational integrations rather than generic chat interfaces.",
-  "top_opportunities": [],
-  "recommended_next_queries": [],
+  "run_id": "run-1795383006640",
+  "timestamp": "2026-11-22T21:30:06.640Z",
+  "research_summary": "The research input highlights repeated startup activity around generalist audio models, CAD agents, scientific analysis, frontier-AI data operations, self-improving AI systems, benefits-payment infrastructure, insurance software, presentation generation, and AI voice tools. The strongest product opportunities are domain-specific systems with proprietary workflows, structured data, evaluation loops, or regulated payment logic rather than generic chat interfaces.",
+  "top_opportunities": [
+    "benefits-payment-orchestrator",
+    "scientific-analysis-copilot",
+    "cad-design-agent",
+    "ai-evaluation-optimization-loop",
+    "voice-workflow-builder"
+  ],
+  "recommended_next_queries": [
+    "What specific scientific analysis workflows have the highest repetition, cost, and need for auditability?",
+    "Which CAD tasks have stable constraints and measurable success criteria suitable for an initial agent product?",
+    "What are the most common benefits-payment decline and reimbursement failure modes?",
+    "Which AI evaluation failures are most costly for production teams and currently handled manually?",
+    "Which voice workflows have low-risk actions, high volume, and clear escalation rules?",
+    "What evidence best predicts success for engineers joining very early-stage startups?",
+    "Which insurance document and claims categories have standardized schemas and high manual-review costs?"
+  ],
   "quality_notes": [
-    "Validated total ideas: 2"
+    "Synthesis is based on one research input and should be treated as directional.",
+    "The input consists primarily of summaries and headlines, so customer demand, market size, pricing, and competitive intensity are not independently validated.",
+    "Several opportunities involve regulated or high-stakes domains and require compliance, security, and expert review before implementation.",
+    "No additional sources were available or used.",
+    "Ideas were deduplicated around distinct workflow and industry boundaries.",
+    "Validated total ideas: 9"
   ]
 }
