@@ -1,17 +1,28 @@
-# Opportunity repository
+# Opportunity Repository
 
-## Research interpretation
-The inputs indicate growing demand for trustworthy autonomous software, verifiable computation, secure agent execution, high-precision audio processing, and operational tooling for containerized workloads.
+## Interpretation
+The repository prioritizes infrastructure and workflow products supported by repeated signals around automation, privacy, verification, local execution, operational scale, and cost reduction.
 
-## Selection criteria
-Ideas were selected for clear pain, technical depth, implementation feasibility, recurring monetization potential, and evidence of demand or strong directional signals. Claims described as inferences are explicitly marked as such.
+## Scoring
+- novelty: distinctiveness of the opportunity
+- feasibility: likelihood of delivering a useful initial product
+- impact: potential value created for customers
+- effort: estimated implementation and deployment difficulty, where a higher score means more effort
 
-## Recommended validation sequence
-1. Validate the approval and audit workflow for autonomous code changes.
-2. Test agent permission and memory policies in a controlled environment.
-3. Benchmark regression testing against deterministic tool-use scenarios.
-4. Measure willingness to pay for precise audio timelines.
-5. Compare self-hosted and managed deployment preferences.
+## Research quality
+Evidence is limited to the supplied inputs. Product traction and discussion volume are treated as demand signals, not proof of retention or willingness to pay. Inferences are explicitly labeled in the relevant evidence fields.
 
-## Confidence interpretation
-High confidence indicates direct pain or product demand signals in the supplied inputs. Medium confidence indicates a strong adjacent signal but requires customer discovery or technical benchmarking.
+## Recommended sequencing
+1. Validate the API authentication control plane with teams managing many integrations.
+2. Prototype verified execution around one class of distributed software.
+3. Test private context governance with a small engineering organization.
+4. Narrow the research dataset builder to one recurring, evidence-sensitive workflow.
+5. Validate manufacturing compatibility using one component family and measurable inventory data.
+
+## Common validation metrics
+- Time saved per workflow
+- Error or incident reduction
+- Approval-cycle duration
+- Percentage of outputs with traceable evidence
+- Deployment time and integration cost
+- Retention after the first recurring operational cycle
