@@ -1,0 +1,438 @@
+{
+  "run_id": "run-1795577409584",
+  "timestamp": "2026-11-25T03:30:09.584Z",
+  "research_summary": "The inputs indicate strong demand for infrastructure around autonomous software agents, privacy-preserving context access, evaluation of voice systems, secure financial actions, distributed model training, and post-quantum network migration. The highest-signal opportunities are control-plane products that reduce operational, security, compliance, or deployment risk rather than generic content-generation tools. Demand signals include substantial engagement around agent trust, secure data sharing, sandboxed model communication, local compute utilization, security incidents, privacy controls, agent evaluation, and financial automation. Some opportunities are signals or inferences because the inputs provide market attention and product descriptions rather than verified purchasing data.",
+  "top_opportunities": [
+    "Agent Action Control Plane: strongest combined signal across trust, sandbox boundaries, security incidents, and enterprise governance; begin with tool-call interception and evidence generation.",
+    "Context Sanitization Gateway: clear privacy pain with feasible proxy and SDK distribution, supported by direct interest in preventing personal data from entering AI workflows.",
+    "Voice Agent Evaluation Grid: direct developer-tool demand with a measurable wedge around regression testing, simulation, and release gates.",
+    "Post-Quantum Migration Observability: technically differentiated infrastructure opportunity that converts cryptographic transition uncertainty into an inventory and testing workflow.",
+    "Human-Controlled Payment Execution Layer: highest potential impact but materially higher regulatory, fraud, and liability risk; validate through non-custodial workflows first."
+  ],
+  "ideas_by_industry": [
+    {
+      "industry": "Enterprise security and governance",
+      "ideas": [
+        {
+          "id": "agent-action-control-plane",
+          "title": "Policy and Evidence Control Plane for Autonomous Agents",
+          "problem": "Organizations cannot reliably determine which autonomous agents accessed sensitive data, invoked external tools, communicated through indirect channels, or took consequential actions. Existing logs often capture individual systems but not the full decision and authorization chain.",
+          "solution": "Provide a centralized control plane that inventories agents, tools, data scopes, delegated permissions, approvals, and outcomes. Enforce policies before execution and generate tamper-evident evidence packages for security review, incident response, and compliance audits.",
+          "technical_approach": "Use an event-sourced authorization layer with short-lived capability tokens, policy-as-code evaluation, immutable execution traces, agent identity binding, tool-call interception, sandbox telemetry, and graph-based reconstruction of multi-agent workflows. Support human approval gates for high-risk actions and replayable simulations for policy testing.",
+          "stack": [
+            "Rust",
+            "Go",
+            "PostgreSQL",
+            "OpenTelemetry",
+            "OPA-compatible policy engine",
+            "WASM sandboxing",
+            "Apache Kafka",
+            "React"
+          ],
+          "evidence": [
+            "A supplied input received 936 points and 392 comments for concerns that autonomous agents may serve external incentives rather than user interests, indicating strong attention to agent accountability and control.",
+            "A supplied input described models communicating through inference servers despite sandboxing, signaling that network-level isolation alone may not provide sufficient governance.",
+            "A supplied input listed an active intrusion campaign against security management servers, reinforcing demand for stronger telemetry, authorization, and incident evidence.",
+            "This opportunity is an inference combining the trust, sandbox-boundary, and security-incident signals."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "enterprise SaaS",
+            "usage-based security telemetry",
+            "professional services"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 10,
+            "effort": 8
+          },
+          "risks": [
+            "Complex integrations with model runtimes and enterprise identity systems",
+            "Policy errors could block legitimate automation or permit unsafe actions",
+            "Long enterprise procurement cycles",
+            "Requires credible security assurances and independent validation"
+          ],
+          "tags": [
+            "agent-governance",
+            "authorization",
+            "auditability",
+            "zero-trust",
+            "security"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Prototype interception for tool calls and external network requests, then validate whether security teams will pay for unified agent identity, policy enforcement, and replayable evidence."
+        }
+      ]
+    },
+    {
+      "industry": "Privacy and data protection",
+      "ideas": [
+        {
+          "id": "context-sanitization-gateway",
+          "title": "Privacy-Preserving Context Gateway for AI Workflows",
+          "problem": "Employees and software agents can unintentionally transmit personal, confidential, or regulated information into external model contexts. Point solutions that protect a single input surface do not provide organization-wide classification, redaction, provenance, or policy enforcement.",
+          "solution": "Offer an inline gateway that detects sensitive data before it enters an AI workflow, applies reversible tokenization or field-level redaction, and restores authorized values only at approved execution boundaries. Provide organization-wide policy management and forensic reporting.",
+          "technical_approach": "Combine deterministic recognizers, custom entity models, structured-data parsers, secret detection, policy evaluation, format-preserving tokenization, tenant-specific vaults, and egress monitoring. Add SDKs and proxies for chat, API, email, browser, and agent-tool traffic, with latency budgets and fail-closed modes.",
+          "stack": [
+            "Go",
+            "Python",
+            "PostgreSQL",
+            "Redis",
+            "OpenTelemetry",
+            "Envoy",
+            "Vault-compatible key management",
+            "Kubernetes"
+          ],
+          "evidence": [
+            "A supplied input described a product focused on catching personal data before it reaches AI chat, indicating active demand for AI-specific privacy controls.",
+            "Several supplied products position safe access to inboxes, company knowledge, and AI agents as a core capability, signaling that data boundary management is becoming a product category.",
+            "The opportunity is an inference that a cross-channel enforcement and provenance layer remains under-served relative to individual privacy utilities."
+          ],
+          "sources": [
+            "research-input-2"
+          ],
+          "business_models": [
+            "enterprise SaaS",
+            "API metering",
+            "compliance package licensing"
+          ],
+          "scores": {
+            "novelty": 7,
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 7
+          },
+          "risks": [
+            "False positives can materially reduce productivity",
+            "Sensitive data classification varies by jurisdiction and customer",
+            "Token restoration creates a high-value security target",
+            "Model-based detection may introduce latency and nondeterminism"
+          ],
+          "tags": [
+            "privacy",
+            "PII",
+            "data-loss-prevention",
+            "tokenization",
+            "AI-security"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Build a proxy covering structured tool calls and unstructured prompts, measure detection precision and latency, and test policies with legal, healthcare, and financial operations teams."
+        }
+      ]
+    },
+    {
+      "industry": "Customer operations and contact centers",
+      "ideas": [
+        {
+          "id": "voice-agent-evaluation-grid",
+          "title": "Continuous Evaluation and Release Control for Voice Agents",
+          "problem": "Voice agents are difficult to test across accents, interruptions, noisy environments, emotional states, tool failures, escalation paths, and compliance requirements. Teams lack reliable regression suites that connect simulated conversations to production outcomes.",
+          "solution": "Create a testing and release platform that generates scenario matrices, simulates callers, evaluates transcripts and audio behavior, detects policy violations, and blocks deployment when quality or safety thresholds regress.",
+          "technical_approach": "Use scenario DSLs, controllable synthetic callers, audio perturbation pipelines, speech-to-text and text-to-speech adapters, conversation-state assertions, rubric-based and deterministic scoring, trace correlation, human review sampling, and canary deployment controls. Store audio, transcripts, tool traces, and evaluator decisions as linked test artifacts.",
+          "stack": [
+            "TypeScript",
+            "Python",
+            "PostgreSQL",
+            "Object storage",
+            "WebRTC",
+            "OpenTelemetry",
+            "Containerized runners",
+            "React"
+          ],
+          "evidence": [
+            "A supplied input listed a product positioned around faster voice-agent evaluations from simulation to production, directly signaling a developer-tool need.",
+            "Another supplied input described phone support unified with other communication channels, indicating that voice automation is moving into operational customer-support workflows.",
+            "The opportunity is an inference that deployment governance, reproducibility, and regression analysis are stronger monetization points than basic voice generation."
+          ],
+          "sources": [
+            "research-input-2"
+          ],
+          "business_models": [
+            "usage-based SaaS",
+            "enterprise quality platform",
+            "managed evaluation services"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 8,
+            "impact": 8,
+            "effort": 7
+          },
+          "risks": [
+            "Synthetic conversations may not represent real caller behavior",
+            "Evaluation metrics can be gamed or disagree with customer satisfaction",
+            "Audio data creates privacy and retention obligations",
+            "Telephony integrations and regional requirements add complexity"
+          ],
+          "tags": [
+            "voice-agents",
+            "evaluation",
+            "contact-center",
+            "simulation",
+            "quality-assurance"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Implement a scenario runner with deterministic tool assertions and audio perturbations, then compare its regression findings against a small labeled set of real support interactions."
+        }
+      ]
+    },
+    {
+      "industry": "Financial operations",
+      "ideas": [
+        {
+          "id": "agent-payment-authorization",
+          "title": "Human-Controlled Payment Execution Layer for AI Agents",
+          "problem": "Agents can prepare financial actions but lack a consistent authorization, fraud-control, reconciliation, and audit layer for sending or receiving money. Direct access to payment tools creates unacceptable risk for many businesses.",
+          "solution": "Provide a payment execution layer where agents can draft transactions, explain intent, validate counterparties, enforce limits, obtain contextual approvals, execute through connected payment rails, and reconcile results without exposing unrestricted credentials.",
+          "technical_approach": "Use capability-based credentials, transaction intent schemas, dual-control approvals, risk scoring, idempotency keys, counterparty verification, policy evaluation, ledger synchronization, webhook verification, and cryptographically signed receipts. Support simulation mode and deterministic rollback or compensation workflows where rails permit.",
+          "stack": [
+            "Go",
+            "PostgreSQL",
+            "Redis",
+            "HSM-backed key management",
+            "OpenAPI",
+            "Event streaming",
+            "Policy engine",
+            "React"
+          ],
+          "evidence": [
+            "A supplied input described an interface for sending and receiving money through an agent-tool protocol, signaling demand for programmatic financial actions.",
+            "Another supplied input described starting and running a company through an AI assistant, indicating a broader movement toward agent-mediated business operations.",
+            "The opportunity is an inference that the durable infrastructure gap is authorization, controls, reconciliation, and evidence rather than another conversational interface."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "transaction fee",
+            "enterprise SaaS",
+            "risk and compliance add-ons"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 6,
+            "impact": 10,
+            "effort": 9
+          },
+          "risks": [
+            "Financial regulation and licensing requirements",
+            "Fraud, account takeover, and prompt-injection exposure",
+            "Payment reversals and reconciliation complexity",
+            "High liability if authorization or routing fails"
+          ],
+          "tags": [
+            "fintech",
+            "payments",
+            "agent-actions",
+            "fraud-controls",
+            "reconciliation"
+          ],
+          "status": "new",
+          "confidence": "medium",
+          "next_action": "Start with non-custodial payment initiation and approval workflows for low-risk business expenses, validating audit and reconciliation requirements before handling broader payment types."
+        }
+      ]
+    },
+    {
+      "industry": "Machine learning infrastructure",
+      "ideas": [
+        {
+          "id": "idle-compute-training-market",
+          "title": "Federated Idle-Compute Training Orchestrator",
+          "problem": "Organizations and individuals possess intermittent unused compute, but coordinating it for model training is difficult because of heterogeneous hardware, unreliable availability, privacy concerns, checkpoint transfer costs, and incentive alignment.",
+          "solution": "Build an orchestration layer that schedules privacy-aware training jobs across idle devices, measures useful compute, handles preemption, encrypts checkpoints, and provides reproducible accounting for contributors and job owners.",
+          "technical_approach": "Use fault-tolerant distributed training, elastic worker membership, gradient or parameter encryption, checkpoint sharding, hardware capability profiling, verifiable job accounting, secure sandboxing, and differential-privacy options. Begin with embarrassingly parallel fine-tuning and evaluation workloads before attempting tightly synchronized training.",
+          "stack": [
+            "Rust",
+            "Python",
+            "PyTorch-compatible runtime",
+            "WebRTC or QUIC",
+            "Object storage",
+            "PostgreSQL",
+            "Prometheus",
+            "Kubernetes"
+          ],
+          "evidence": [
+            "A supplied input described a training engine using idle local compute, indicating attention to decentralized resource utilization.",
+            "Other supplied inputs highlighted new model architectures and specialized acceleration paths, suggesting continued pressure to reduce training cost and improve hardware efficiency.",
+            "The opportunity is an inference that reliability, accounting, and privacy controls are the commercial gap around distributed idle compute."
+          ],
+          "sources": [
+            "research-input-1"
+          ],
+          "business_models": [
+            "compute marketplace fee",
+            "enterprise orchestration license",
+            "managed training service"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 6,
+            "impact": 8,
+            "effort": 9
+          },
+          "risks": [
+            "Unreliable nodes can reduce throughput and reproducibility",
+            "Malicious workers may poison training or falsify contribution",
+            "Bandwidth and checkpoint costs can erase compute savings",
+            "Hardware and operating-system diversity increases support burden"
+          ],
+          "tags": [
+            "distributed-training",
+            "idle-compute",
+            "federated-learning",
+            "orchestration",
+            "compute-marketplace"
+          ],
+          "status": "new",
+          "confidence": "medium",
+          "next_action": "Benchmark preemptible fine-tuning across heterogeneous machines and quantify break-even economics against centralized compute for several workload sizes."
+        }
+      ]
+    },
+    {
+      "industry": "Network infrastructure and cryptography",
+      "ideas": [
+        {
+          "id": "pq-migration-observability",
+          "title": "Post-Quantum Migration Inventory and Compatibility Gateway",
+          "problem": "Organizations cannot easily inventory cryptographic dependencies, identify long-lived sensitive traffic, or test hybrid post-quantum handshakes across legacy services. Migration decisions are frequently made without dependency-level evidence.",
+          "solution": "Provide a discovery and compatibility platform that maps cryptographic usage, classifies data by confidentiality lifetime, tests hybrid handshakes, reports client and server failures, and manages staged migration plans without requiring immediate application rewrites.",
+          "technical_approach": "Deploy passive flow collectors and active probes, parse TLS and certificate metadata, fingerprint cryptographic libraries, maintain service dependency graphs, run hybrid handshake test matrices, and expose policy gates in deployment pipelines. Include downgrade detection, certificate lifecycle tracking, and evidence exports for risk committees.",
+          "stack": [
+            "Rust",
+            "Go",
+            "eBPF",
+            "OpenTelemetry",
+            "PostgreSQL",
+            "ClickHouse",
+            "QUIC/TLS libraries",
+            "Kubernetes"
+          ],
+          "evidence": [
+            "A supplied input described a proxy combining HTTP/3, QUIC, and hybrid post-quantum TLS, signaling practical experimentation with migration-compatible network infrastructure.",
+            "The input also showed interest in low-level performance and accelerator portability, indicating a technically sophisticated audience for infrastructure tooling.",
+            "The opportunity is an inference that inventory, testing, and migration observability may have broader enterprise demand than a standalone protocol implementation."
+          ],
+          "sources": [
+            "research-input-1"
+          ],
+          "business_models": [
+            "enterprise subscription",
+            "per-asset pricing",
+            "migration consulting"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 9,
+            "effort": 8
+          },
+          "risks": [
+            "Standards and implementation details may continue to change",
+            "Passive discovery cannot reveal all embedded cryptographic dependencies",
+            "Incorrect compatibility reporting can cause outages",
+            "Customers may defer work until regulatory or procurement pressure increases"
+          ],
+          "tags": [
+            "post-quantum",
+            "cryptography",
+            "networking",
+            "observability",
+            "migration"
+          ],
+          "status": "new",
+          "confidence": "medium",
+          "next_action": "Create a scanner and compatibility lab for common service patterns, then validate whether infrastructure teams can use the resulting dependency graph to prioritize migration."
+        }
+      ]
+    }
+  ],
+  "ideas_by_business_model": [
+    {
+      "business_model": "enterprise SaaS",
+      "ideas": [
+        {
+          "id": "agent-action-control-plane",
+          "title": "Policy and Evidence Control Plane for Autonomous Agents"
+        },
+        {
+          "id": "context-sanitization-gateway",
+          "title": "Privacy-Preserving Context Gateway for AI Workflows"
+        },
+        {
+          "id": "voice-agent-evaluation-grid",
+          "title": "Continuous Evaluation and Release Control for Voice Agents"
+        },
+        {
+          "id": "pq-migration-observability",
+          "title": "Post-Quantum Migration Inventory and Compatibility Gateway"
+        }
+      ]
+    },
+    {
+      "business_model": "usage-based infrastructure",
+      "ideas": [
+        {
+          "id": "voice-agent-evaluation-grid",
+          "title": "Continuous Evaluation and Release Control for Voice Agents"
+        },
+        {
+          "id": "idle-compute-training-market",
+          "title": "Federated Idle-Compute Training Orchestrator"
+        },
+        {
+          "id": "agent-action-control-plane",
+          "title": "Policy and Evidence Control Plane for Autonomous Agents"
+        }
+      ]
+    },
+    {
+      "business_model": "transaction fee",
+      "ideas": [
+        {
+          "id": "agent-payment-authorization",
+          "title": "Human-Controlled Payment Execution Layer for AI Agents"
+        },
+        {
+          "id": "idle-compute-training-market",
+          "title": "Federated Idle-Compute Training Orchestrator"
+        }
+      ]
+    },
+    {
+      "business_model": "professional and managed services",
+      "ideas": [
+        {
+          "id": "agent-action-control-plane",
+          "title": "Policy and Evidence Control Plane for Autonomous Agents"
+        },
+        {
+          "id": "pq-migration-observability",
+          "title": "Post-Quantum Migration Inventory and Compatibility Gateway"
+        },
+        {
+          "id": "voice-agent-evaluation-grid",
+          "title": "Continuous Evaluation and Release Control for Voice Agents"
+        }
+      ]
+    }
+  ],
+  "recommended_next_queries": [
+    "Validate willingness to pay for centralized agent identity, tool-call interception, and tamper-evident execution evidence.",
+    "Measure privacy gateway precision, recall, latency, and policy coverage across structured and unstructured AI workflows.",
+    "Compare synthetic voice-agent evaluation scores with labeled production outcomes and escalation rates.",
+    "Identify the minimum non-custodial control set required for safe agent-initiated business payments.",
+    "Benchmark distributed idle-compute training economics under node churn, bandwidth limits, and checkpoint encryption.",
+    "Map enterprise cryptographic inventories and determine which post-quantum migration reports influence budget decisions."
+  ],
+  "blocked_sources": []
+}
