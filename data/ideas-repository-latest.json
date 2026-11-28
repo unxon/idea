@@ -1,8 +1,511 @@
 {
-  "research_summary": "",
-  "ideas_by_industry": [],
-  "ideas_by_business_model": [],
-  "top_opportunities": [],
-  "recommended_next_queries": [],
+  "run_id": "run-1795836666094",
+  "timestamp": "2026-11-28T03:31:06.094Z",
+  "research_summary": "The inputs show strong demand for infrastructure around agent reliability, secure execution, developer productivity, model efficiency, provenance, and specialized creative workflows. Repeated demand signals include high engagement with software testing agents, isolated execution environments, multi-session coordination, low-cost compute routing, privacy concerns, and tools that convert unstructured work into reusable interfaces. The strongest opportunities are control-plane products that add verification, governance, observability, or cost management rather than generic generation features.",
+  "ideas_by_industry": [
+    {
+      "industry": "Developer infrastructure and software engineering",
+      "ideas": [
+        {
+          "id": "agent-change-verifier",
+          "title": "Agent Change Verification Control Plane",
+          "problem": "Autonomous coding systems can modify software rapidly, but teams lack reliable, repeatable verification across regressions, integration failures, security issues, and unintended behavioral changes.",
+          "solution": "Provide a verification control plane that runs risk-weighted checks against every agent-generated change and produces an auditable release decision.",
+          "technical_approach": "Capture repository state before and after a change, infer affected components, generate targeted test plans, execute tests in isolated environments, compare runtime behavior, scan dependencies and permissions, and require configurable approval gates for high-risk changes.",
+          "stack": [
+            "Go",
+            "TypeScript",
+            "PostgreSQL",
+            "Container isolation",
+            "Browser automation",
+            "OpenTelemetry",
+            "Object storage"
+          ],
+          "evidence": [
+            "A developer-tool launch focused on verifying every change received strong engagement, which is a direct demand signal for agent-generated code assurance.",
+            "A separate launch emphasized fixing regressions across a codebase, reinforcing the need for change-impact analysis and continuous validation.",
+            "Inference: teams adopting autonomous coding systems will need independent verification because generation speed increases the volume and risk of unreviewed changes."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "B2B SaaS",
+            "Usage-based pricing",
+            "Enterprise license"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 7
+          },
+          "risks": [
+            "False positives could slow development workflows.",
+            "Deep repository integration may create implementation complexity.",
+            "High-risk customers may require extensive compliance evidence."
+          ],
+          "tags": [
+            "developer-tools",
+            "software-testing",
+            "agent-governance",
+            "continuous-verification"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Prototype repository instrumentation, impact analysis, isolated test execution, and a pass-fail decision report for pull-request-sized changes."
+        },
+        {
+          "id": "agent-session-observability",
+          "title": "Multi-Agent Work Session Ledger",
+          "problem": "Teams running many coding or research agents lack a unified view of active sessions, decisions, artifacts, dependencies, failures, and duplicated work.",
+          "solution": "Create a searchable session ledger that represents agent work as a graph of tasks, artifacts, tool calls, approvals, and outcomes.",
+          "technical_approach": "Ingest event streams from local and hosted agent runtimes, normalize tool calls and file changes, build a temporal graph, attach artifacts and cost metrics, and provide replay and intervention controls.",
+          "stack": [
+            "Rust",
+            "React",
+            "Graph database",
+            "SQLite sync layer",
+            "OpenTelemetry",
+            "WebSockets",
+            "Local-first encryption"
+          ],
+          "evidence": [
+            "A visual product for mapping coding-agent sessions attracted measurable engagement, indicating interest in session visibility.",
+            "A workspace product positioned around teams and their agents also received strong engagement, signaling demand for coordination and shared context.",
+            "Inference: as concurrent sessions increase, session lineage and artifact ownership become operational requirements rather than optional analytics."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "B2B SaaS",
+            "Per-seat pricing",
+            "Enterprise license"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 8,
+            "effort": 7
+          },
+          "risks": [
+            "Data collection may vary across agent runtimes.",
+            "Sensitive source code and prompts require strong privacy controls.",
+            "Graph views may be attractive but insufficient without actionable controls."
+          ],
+          "tags": [
+            "agent-observability",
+            "developer-productivity",
+            "workflows",
+            "graph-analytics"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Build an event schema and local collector for concurrent sessions, then demonstrate dependency tracing and duplicate-work detection."
+        },
+        {
+          "id": "secure-agent-sandbox",
+          "title": "Policy-Driven Sandbox Gateway for Untrusted Agent Workloads",
+          "problem": "Agent-generated code and tools may access credentials, networks, data stores, or host resources without adequate visibility or containment.",
+          "solution": "Offer a programmable execution gateway that launches every workload inside a disposable sandbox with explicit network, filesystem, identity, and spending policies.",
+          "technical_approach": "Use microVM or hardened container isolation, short-lived credentials, egress allowlists, syscall monitoring, immutable snapshots, resource quotas, and policy evaluation before and during execution.",
+          "stack": [
+            "Rust",
+            "Firecracker-compatible microVMs",
+            "WASM policy engine",
+            "Kubernetes",
+            "eBPF",
+            "Vault-compatible secrets management",
+            "Prometheus"
+          ],
+          "evidence": [
+            "The inputs include concern about tools sending user ideas to remote systems without clear disclosure, signaling a privacy and data-exfiltration risk.",
+            "A sandbox product for safely running untrusted code received strong engagement, directly validating demand for isolated execution.",
+            "Inference: agent adoption will increase the need for a security boundary between tool autonomy and organizational systems."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "Infrastructure SaaS",
+            "Usage-based pricing",
+            "Managed private deployment"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 10,
+            "effort": 8
+          },
+          "risks": [
+            "Isolation failures could create severe security incidents.",
+            "Runtime overhead may reduce user adoption.",
+            "Enterprise deployments require complex identity and network integration."
+          ],
+          "tags": [
+            "sandboxing",
+            "agent-security",
+            "data-loss-prevention",
+            "runtime-policy"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Implement a minimal gateway with disposable execution, egress controls, secret redaction, and a tamper-evident execution report."
+        }
+      ]
+    },
+    {
+      "industry": "AI infrastructure and compute optimization",
+      "ideas": [
+        {
+          "id": "model-cost-router",
+          "title": "Workload-Aware Model and Compute Router",
+          "problem": "Teams face rapidly changing tradeoffs among latency, quality, hardware availability, and inference cost, while manual routing produces waste and unpredictable performance.",
+          "solution": "Route each workload to the least expensive available model and compute target that satisfies a declared quality and latency objective.",
+          "technical_approach": "Collect request-level quality, latency, token, and hardware metrics; classify workloads; maintain benchmark profiles; use constrained optimization for routing; support fallback, batching, caching, and capacity reservations.",
+          "stack": [
+            "Python",
+            "Go",
+            "PostgreSQL",
+            "Redis",
+            "Prometheus",
+            "Kubernetes",
+            "ONNX-compatible runtime adapters"
+          ],
+          "evidence": [
+            "A launch centered on finding the cheapest available graphics processing capacity received engagement, indicating sensitivity to infrastructure cost and availability.",
+            "Another input reported substantially higher token throughput from optimized local inference, signaling demand for performance-per-dollar improvements.",
+            "Inference: heterogeneous hardware and model choices create a persistent optimization layer for production teams."
+          ],
+          "sources": [
+            "research-input-1",
+            "research-input-2"
+          ],
+          "business_models": [
+            "Usage-based pricing",
+            "Infrastructure SaaS",
+            "Savings-share pricing"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 8,
+            "impact": 9,
+            "effort": 7
+          },
+          "risks": [
+            "Quality measurement is domain-specific and difficult to automate.",
+            "Savings may fluctuate with hardware supply and workload mix.",
+            "Routing errors can create customer-visible quality degradation."
+          ],
+          "tags": [
+            "inference-optimization",
+            "cloud-costs",
+            "model-routing",
+            "capacity-management"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Create a benchmark harness comparing routing policies across latency, cost, throughput, and task-quality constraints."
+        }
+      ]
+    },
+    {
+      "industry": "Cybersecurity and digital commerce",
+      "ideas": [
+        {
+          "id": "checkout-skimmer-monitor",
+          "title": "Client-Side Payment Integrity Monitor",
+          "problem": "Malicious browser scripts can capture payment data through techniques that evade server-side monitoring and traditional periodic audits.",
+          "solution": "Continuously monitor checkout-page behavior, detect unauthorized script and network changes, and provide evidence suitable for incident response and compliance review.",
+          "technical_approach": "Deploy a lightweight browser-side sensor, maintain a signed asset inventory, compare script behavior against approved baselines, inspect outbound requests, detect suspicious browser APIs, and correlate changes with deployment events.",
+          "stack": [
+            "TypeScript",
+            "WebAssembly",
+            "Go",
+            "ClickHouse",
+            "Kafka",
+            "OpenTelemetry",
+            "Signed policy manifests"
+          ],
+          "evidence": [
+            "The inputs report payment-card skimming through browser communication mechanisms on popular shopping sites, a direct signal of an active attack surface.",
+            "High engagement with the report indicates broad concern about client-side payment security.",
+            "Inference: continuous behavioral monitoring is more useful than occasional source review because malicious code can be introduced through dependencies or compromised deployment paths."
+          ],
+          "sources": [
+            "research-input-1"
+          ],
+          "business_models": [
+            "B2B SaaS",
+            "Per-domain pricing",
+            "Managed security service"
+          ],
+          "scores": {
+            "novelty": 9,
+            "feasibility": 7,
+            "impact": 10,
+            "effort": 8
+          },
+          "risks": [
+            "Browser instrumentation must avoid harming checkout performance.",
+            "Detection requires careful handling of legitimate third-party services.",
+            "Security customers may demand independently validated detection accuracy."
+          ],
+          "tags": [
+            "web-security",
+            "payment-security",
+            "supply-chain-security",
+            "client-side-monitoring"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Develop a sensor that inventories scripts and outbound requests, then validate detection against controlled benign and malicious behavior patterns."
+        }
+      ]
+    },
+    {
+      "industry": "Legal, housing, and regulated services",
+      "ideas": [
+        {
+          "id": "regulated-response-guard",
+          "title": "High-Stakes Automated Response Guard",
+          "problem": "Automated assistants can provide incorrect or unauthorized guidance in housing, financial, legal, and other regulated interactions, creating direct harm and liability.",
+          "solution": "Insert a verification and escalation layer before an automated response reaches a user, checking policy, jurisdiction, confidence, source provenance, and required human approval.",
+          "technical_approach": "Represent rules as versioned policies, classify request risk, retrieve approved guidance, detect contradictory claims, require structured citations internally, log approvals, and route ambiguous cases to qualified reviewers.",
+          "stack": [
+            "TypeScript",
+            "Python",
+            "PostgreSQL",
+            "Policy-as-code engine",
+            "Document retrieval",
+            "Audit log storage",
+            "Workflow queue"
+          ],
+          "evidence": [
+            "The inputs describe a harmful housing outcome caused by incorrect automated guidance, providing a direct failure signal for high-stakes assistant use.",
+            "The inputs also highlight false computer-checked proofs, signaling that automated confidence and verification can be misleading without independent validation.",
+            "Inference: regulated deployments need response governance and escalation, not merely better language generation."
+          ],
+          "sources": [
+            "research-input-1"
+          ],
+          "business_models": [
+            "B2B SaaS",
+            "Per-case pricing",
+            "Compliance services"
+          ],
+          "scores": {
+            "novelty": 8,
+            "feasibility": 7,
+            "impact": 10,
+            "effort": 8
+          },
+          "risks": [
+            "Legal interpretation varies by jurisdiction.",
+            "Human review requirements may limit automation economics.",
+            "Customers may treat the guard as a substitute for professional advice."
+          ],
+          "tags": [
+            "regulated-workflows",
+            "human-in-the-loop",
+            "auditability",
+            "risk-controls"
+          ],
+          "status": "new",
+          "confidence": "high",
+          "next_action": "Select one narrow regulated workflow and implement policy versioning, risk classification, approved-response retrieval, and mandatory escalation."
+        }
+      ]
+    },
+    {
+      "industry": "Education and creative software",
+      "ideas": [
+        {
+          "id": "interactive-skill-simulator",
+          "title": "Embodied Learning Simulator for Technical Concepts",
+          "problem": "Text and video explanations often fail to give learners intuitive feedback when concepts depend on manipulation, spatial reasoning, sound, or system behavior.",
+          "solution": "Provide interactive simulations where learners manipulate variables directly and receive immediate visual, auditory, and constraint-based feedback.",
+          "technical_approach": "Build a deterministic simulation engine, expose parameterized objects, capture action traces, generate adaptive exercises from error patterns, and provide instructor analytics without requiring generative content as the core value.",
+          "stack": [
+            "TypeScript",
+            "WebGL",
+            "Web Audio",
+            "Rust or C++ simulation modules",
+            "IndexedDB",
+            "PostgreSQL",
+            "LMS-compatible APIs"
+          ],
+          "evidence": [
+            "An interactive mathematics product based on learning by feel received strong engagement, signaling demand for tactile and visual learning interfaces.",
+            "A hardware-oriented audio project shows continued interest in hands-on experimentation and accessible technical creation.",
+            "Inference: interactive feedback loops can create defensible educational value where passive explanation is insufficient."
+          ],
+          "sources": [
+            "research-input-1"
+          ],
+          "business_models": [
+            "Subscription",
+            "Institutional licensing",
+            "Paid course packs"
+          ],
+          "scores": {
+            "novelty": 7,
+            "feasibility": 8,
+            "impact": 8,
+            "effort": 6
+          },
+          "risks": [
+            "Simulation quality must be validated by educators.",
+            "Content expansion can become labor-intensive.",
+            "Learning outcomes may vary across age groups and prior knowledge."
+          ],
+          "tags": [
+            "education",
+            "interactive-simulation",
+            "technical-learning",
+            "adaptive-feedback"
+          ],
+          "status": "new",
+          "confidence": "medium",
+          "next_action": "Prototype one concept with manipulable variables, measurable learner errors, and a compact instructor progress dashboard."
+        }
+      ]
+    }
+  ],
+  "ideas_by_business_model": [
+    {
+      "business_model": "B2B SaaS",
+      "ideas": [
+        {
+          "id": "agent-change-verifier",
+          "title": "Agent Change Verification Control Plane"
+        },
+        {
+          "id": "agent-session-observability",
+          "title": "Multi-Agent Work Session Ledger"
+        },
+        {
+          "id": "checkout-skimmer-monitor",
+          "title": "Client-Side Payment Integrity Monitor"
+        },
+        {
+          "id": "regulated-response-guard",
+          "title": "High-Stakes Automated Response Guard"
+        }
+      ]
+    },
+    {
+      "business_model": "Usage-based pricing",
+      "ideas": [
+        {
+          "id": "agent-change-verifier",
+          "title": "Agent Change Verification Control Plane"
+        },
+        {
+          "id": "model-cost-router",
+          "title": "Workload-Aware Model and Compute Router"
+        },
+        {
+          "id": "secure-agent-sandbox",
+          "title": "Policy-Driven Sandbox Gateway for Untrusted Agent Workloads"
+        }
+      ]
+    },
+    {
+      "business_model": "Enterprise license",
+      "ideas": [
+        {
+          "id": "agent-change-verifier",
+          "title": "Agent Change Verification Control Plane"
+        },
+        {
+          "id": "agent-session-observability",
+          "title": "Multi-Agent Work Session Ledger"
+        }
+      ]
+    },
+    {
+      "business_model": "Managed private deployment",
+      "ideas": [
+        {
+          "id": "secure-agent-sandbox",
+          "title": "Policy-Driven Sandbox Gateway for Untrusted Agent Workloads"
+        }
+      ]
+    },
+    {
+      "business_model": "Infrastructure SaaS",
+      "ideas": [
+        {
+          "id": "model-cost-router",
+          "title": "Workload-Aware Model and Compute Router"
+        }
+      ]
+    },
+    {
+      "business_model": "Savings-share pricing",
+      "ideas": [
+        {
+          "id": "model-cost-router",
+          "title": "Workload-Aware Model and Compute Router"
+        }
+      ]
+    },
+    {
+      "business_model": "Managed security service",
+      "ideas": [
+        {
+          "id": "checkout-skimmer-monitor",
+          "title": "Client-Side Payment Integrity Monitor"
+        }
+      ]
+    },
+    {
+      "business_model": "Compliance services",
+      "ideas": [
+        {
+          "id": "regulated-response-guard",
+          "title": "High-Stakes Automated Response Guard"
+        }
+      ]
+    },
+    {
+      "business_model": "Subscription",
+      "ideas": [
+        {
+          "id": "interactive-skill-simulator",
+          "title": "Embodied Learning Simulator for Technical Concepts"
+        }
+      ]
+    },
+    {
+      "business_model": "Institutional licensing",
+      "ideas": [
+        {
+          "id": "interactive-skill-simulator",
+          "title": "Embodied Learning Simulator for Technical Concepts"
+        }
+      ]
+    }
+  ],
+  "top_opportunities": [
+    "Client-side payment integrity monitoring has the strongest combination of urgent security pain, measurable outcomes, and a clear enterprise buyer.",
+    "Policy-driven sandboxing is a high-impact infrastructure opportunity because it addresses privacy, data-exfiltration, and untrusted execution risks simultaneously.",
+    "Agent change verification is well positioned as an independent control layer for the growing volume of autonomous software changes.",
+    "Workload-aware model and compute routing can monetize directly through measurable infrastructure savings and performance improvements.",
+    "High-stakes automated response governance offers strong liability reduction potential but should begin with one narrowly defined regulated workflow."
+  ],
+  "recommended_next_queries": [
+    "What minimum telemetry is required to detect unauthorized client-side payment behavior without affecting page performance?",
+    "Which repository and runtime signals best predict regressions from autonomous code changes?",
+    "Which isolation boundary provides the best security-to-latency tradeoff for untrusted agent workloads?",
+    "How should model routing optimize jointly for quality, latency, availability, and total cost?",
+    "Which regulated workflow has the narrowest ruleset and clearest economic buyer for automated response governance?",
+    "Which interactive technical-learning concepts show measurable improvement from manipulation-based feedback?"
+  ],
   "blocked_sources": []
 }
